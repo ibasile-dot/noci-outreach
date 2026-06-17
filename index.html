@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Noci Targets — Money & Pitch Plan</title>
+<style>
+  :root{--bg:#FAFAF7;--ink:#1F2937;--slate:#1E293B;--muted:#64748B;--line:#E5E7EB;--line2:#F1F5F9;--indigo:#6366F1;--indigo2:#4F46E5;--green:#16A34A;}
+  *{box-sizing:border-box;}
+  html,body{background:var(--bg);color:var(--ink);margin:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.55;font-size:15px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px 80px;}
+  .accent-bar{height:5px;background:linear-gradient(90deg,#6366F1 0%,#818CF8 100%);}
+  header.hero{background:linear-gradient(135deg,#1E293B 0%,#312E81 100%);color:#fff;padding:40px 0 36px;position:relative;}
+  header.hero .wrap{padding-bottom:0;}
+  .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#A5B4FC;font-weight:700;margin:0 0 10px;}
+  header.hero h1{font-size:30px;line-height:1.15;margin:0 0 12px;font-weight:700;}
+  header.hero p{font-size:15px;color:#CBD5E1;max-width:820px;margin:0 0 6px;}
+  .langtoggle{position:absolute;top:18px;right:22px;display:flex;gap:0;border:1px solid #475569;border-radius:9px;overflow:hidden;}
+  .langtoggle button{background:transparent;color:#CBD5E1;border:none;padding:6px 13px;font-size:13px;font-weight:700;cursor:pointer;}
+  .langtoggle button.on{background:#6366F1;color:#fff;}
+  nav.toc{position:sticky;top:0;z-index:20;background:rgba(250,250,247,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 0;}
+  nav.toc .wrap{padding:0 22px;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.toc a{font-size:12px;font-weight:600;color:var(--slate);text-decoration:none;padding:6px 11px;border-radius:8px;border:1px solid var(--line);background:#fff;}
+  nav.toc a:hover{background:#EEF2FF;border-color:#C7D2FE;}
+  section{padding-top:38px;}
+  h2{font-size:21px;font-weight:700;color:var(--slate);margin:0 0 6px;display:flex;align-items:center;gap:10px;}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:9px;background:var(--slate);color:#fff;font-size:14px;flex:none;}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 16px;max-width:880px;}
+  h3{font-size:16px;font-weight:700;color:var(--slate);margin:18px 0 8px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 1px 2px rgba(15,23,42,.03);margin-bottom:13px;}
+  .card.tip{border-left:4px solid var(--indigo);background:#F5F3FF;}
+  .card.warm{border-left:4px solid var(--green);}
+  .card.flag{border-left:4px solid #D97706;background:#FFFBEB;}
+  p{margin:0 0 11px;} ul,ol{margin:0 0 11px;padding-left:20px;} li{margin-bottom:5px;}
+  .pill{display:inline-flex;align-items:center;padding:2px 9px;border-radius:9999px;font-size:11px;font-weight:700;white-space:nowrap;}
+  .p-warm{background:#DCFCE7;color:#166534;}.p-cold{background:#E0F2FE;color:#075985;}.p-flag{background:#FEF3C7;color:#92400E;}.p-new{background:#EDE9FE;color:#5B21B6;}.p-hi{background:#DCFCE7;color:#166534;}
+  table{border-collapse:separate;border-spacing:0;width:100%;font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  th{background:#F1F5F9;color:#334155;font-weight:700;font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;padding:10px 11px;text-align:left;border-bottom:1px solid #E2E8F0;vertical-align:bottom;}
+  td{padding:11px;vertical-align:top;border-bottom:1px solid var(--line2);}
+  tr:last-child td{border-bottom:none;} tbody tr:hover td{background:#FAFAFA;}
+  .scroll-x{overflow-x:auto;border-radius:12px;border:1px solid var(--line);} .scroll-x table{border:none;}
+  a.link{color:var(--indigo2);text-decoration:underline;text-underline-offset:2px;}
+  a.pitchlink{display:inline-block;font-weight:700;color:#fff;background:var(--indigo);padding:4px 9px;border-radius:7px;text-decoration:none;font-size:11px;white-space:nowrap;}
+  .gain{font-weight:800;color:var(--green);} .ask{font-weight:700;color:var(--slate);}
+  .hook{background:#0F172A;color:#fff;border-radius:10px;padding:12px 15px;margin:8px 0;}
+  .meta{font-size:12px;color:var(--muted);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px;} @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
+  .tag{display:inline-block;font-size:11px;font-weight:600;color:var(--muted);background:#F1F5F9;border-radius:6px;padding:3px 9px;margin:0 5px 5px 0;text-decoration:none;}
+  a.tag:hover{background:#E0E7FF;color:var(--indigo2);}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+  .step{display:flex;gap:12px;margin-bottom:11px;} .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:12px;}
+  .detail-card{scroll-margin-top:62px;} .dh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px;}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px;}
+  .roi{border:1px solid #C7D2FE;border-radius:12px;background:#F8FAFF;padding:13px 15px;margin-top:8px;}
+  .roi-title{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--indigo2);margin-bottom:9px;}
+  .roi-inputs{display:grid;grid-template-columns:1fr 1fr;gap:9px;} @media(max-width:600px){.roi-inputs{grid-template-columns:1fr;}}
+  .roi-inputs label{font-size:12px;color:var(--slate);font-weight:600;display:flex;flex-direction:column;gap:3px;}
+  .roi-inputs input{padding:7px 9px;border:1px solid #CBD5E1;border-radius:8px;font-size:14px;width:100%;}
+  .roi-out{display:flex;flex-wrap:wrap;gap:13px;margin-top:12px;padding-top:12px;border-top:1px dashed #C7D2FE;}
+  .roi-out > div{flex:1;min-width:115px;} .roi-out .big{font-size:21px;font-weight:800;display:block;line-height:1.1;}
+  .roi-out small{font-size:11px;color:var(--muted);} .roi-out .g{color:var(--green);}.roi-out .b{color:var(--slate);}.roi-out .i{color:var(--indigo2);}
+  .msg{background:#ECFDF5;border:1px solid #A7F3D0;border-radius:10px;padding:13px 15px;font-size:13.5px;color:#065F46;margin:8px 0;}
+</style>
+</head>
+<body>
+<div class="accent-bar"></div>
+<header class="hero">
+  <div class="langtoggle"><button id="b-en" class="on" onclick="setLang('en')">EN</button><button id="b-it" onclick="setLang('it')">IT</button></div>
+  <div class="wrap">
+    <p class="kicker t" data-it="Piano di contatto — aziende di Noci">Outreach plan — Noci companies</p>
+    <h1 class="t" data-it="Chi contattare e quanto far pagare">Who to pitch, what to charge</h1>
+    <p class="t" data-it="Per ogni azienda: l'aggancio per entrare, i € che guadagnano, e il tuo prezzo.">For each company: the hook to get in, the € they gain, and your price.</p>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#logic" class="t" data-it="Approccio">Approach</a>
+    <a href="#master" class="t" data-it="Tabella">Master table</a>
+    <a href="#mariana" class="t" data-it="Stasera: Mariana">Tonight: Mariana</a>
+    <a href="#details" class="t" data-it="Pitch + ROI">Pitches + ROI</a>
+    <a href="#pricing" class="t" data-it="Prezzo">Pricing</a>
+    <a href="#sectors" class="t" data-it="Nuovi settori">New sectors</a>
+    <a href="#roadmap" class="t" data-it="Piano">Plan</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- LOGIC -->
+<section id="logic">
+  <h2><span class="num">1</span><span class="t" data-it="L'approccio">The approach</span></h2>
+  <div class="card tip">
+    <p class="t" data-it="L'aggancio ti fa ENTRARE; la difficoltà si valida DOPO. Non serve certezza prima dell'incontro — serve un motivo specifico e credibile per ottenere 20 minuti. L'aggancio è un'ipotesi detta come beneficio; la discovery poi conferma la vera difficoltà. Quindi: aggancio → incontro → discovery → difficoltà confermata → offerta su misura."><strong>The hook gets you IN; the pain is validated AFTER.</strong> You don't need certainty before the meeting — you need a specific, believable reason to be given 20 minutes. The hook is a hypothesis stated as a benefit; discovery then confirms the real pain. So: hook → meeting → discovery → confirmed pain → tailored offer.</p>
+    <p class="t" data-it="Mostra sempre € guadagnati vs il tuo prezzo, e posiziona il guadagno come soldi fatti o capacità di crescere — mai come «ore risparmiate»."><strong>Show € they gain vs your price</strong>, and always frame the gain as money made or capacity to grow — never as "hours saved."</p>
+    <p style="margin-bottom:0;" class="t" data-it="Il tuo prezzo = 10% del guadagno annuo (di solito diviso al mese) + un setup una tantum. Loro tengono il 90%. E puoi avere più clienti: lo stesso lavoro, rivenduto, moltiplica il tuo guadagno."><strong>Your price = 10% of the annual gain</strong> (usually split monthly) <strong>+ a one-off setup fee.</strong> They keep 90%. And you can take many clients — the same build, resold, multiplies your income.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;" class="t" data-it="Scalabilità = il valore principale, per quasi tutti">Scalability = the headline value, for almost all of them</h3>
+    <p style="margin-bottom:0;" class="t" data-it="Al Sud un dipendente costa circa €30–38k/anno (tutto incluso) — meno della media nazionale (~€40k) grazie alla Decontribuzione Sud in Puglia. Se la tua automazione evita anche solo un'assunzione — o fa gestire il 30–50% di ordini/preventivi/pazienti in più con lo stesso team — è valore da €30k+/anno, ogni anno. Non vendi uno strumento: vendi capacità di crescere.">In southern Italy one employee costs roughly €30–38k/year fully loaded — below the national ~€40k, thanks to the "Decontribuzione Sud" relief in Puglia. If your automation avoids even one hire — or handles 30–50% more orders/quotes/patients with the same team — that's €30k+/year of value, every year. You're not selling a tool; you're selling growth capacity.</p>
+  </div>
+</section>
+
+<!-- MASTER -->
+<section id="master">
+  <h2><span class="num">2</span><span class="t" data-it="Tabella — guadagno vs prezzo">Master table — gain vs price</span></h2>
+  <p class="sub t" data-it="Ordinata per priorità. Il prezzo è sempre 10% del guadagno + setup. Clicca «Pitch →» per aggancio, calcolatore e modello di prezzo.">Sorted by priority. Price is always 10% of the gain + setup. Click "Pitch →" for the hook, calculator and pricing.</p>
+  <div class="scroll-x">
+  <table>
+    <thead><tr>
+      <th class="t" data-it="Azienda">Company</th><th class="t" data-it="Accesso">Access</th>
+      <th style="min-width:230px;" class="t" data-it="Aggancio → difficoltà da validare">Hook → pain to validate</th>
+      <th class="t" data-it="€ guadagno/anno*">€ gain/yr*</th><th class="t" data-it="Tuo prezzo (10%)">Your price (10%)</th>
+      <th class="t" data-it="Tuo asset da riusare">Your build to reuse</th><th>Pitch</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><a class="link" href="https://www.klimaitalia.it/en/company/">Klimaitalia</a><br><span class="meta">refrigeration</span></td>
+        <td><span class="pill p-warm">WARM</span><br><span class="meta">Mariana</span></td>
+        <td class="t" data-it="Cresci su nuovi mercati senza assumere — l'AI fa cataloghi, preventivi e risposte ricambi in ogni lingua. Valida: cosa traducono/assumono, volume preventivi.">Scale into new markets without hiring — AI does catalogues, quotes & spare-parts replies in every language. Validate: translation/hiring, quote volume.</td>
+        <td><span class="gain">€40–100k</span></td><td><span class="ask">~€7k/yr + €3k setup</span></td>
+        <td>Release Notes Review</td>
+        <td><a class="pitchlink" href="#d-klima">Pitch →</a></td></tr>
+      <tr><td><span class="t" data-it="Dentisti (gruppo)">Dentists (group)</span><br><span class="meta t" data-it="prodotto replicabile">replicable</span></td>
+        <td><span class="pill p-warm">WARM</span><br><span class="meta">Annalaura</span></td>
+        <td class="t" data-it="Ogni chiamata persa è un paziente perso — riempio le poltrone 24/7 senza nuovo personale. Valida: % chiamate perse, no-show, chi risponde fuori orario.">Every missed call is a lost patient — I fill the chairs 24/7 without new staff. Validate: missed-call rate, no-shows, after-hours answering.</td>
+        <td><span class="gain">€30–55k</span></td><td><span class="ask">€199/mo + €40/patient</span></td>
+        <td>Support Mailboxes</td>
+        <td><a class="pitchlink" href="#d-dent">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.beverfood.com/caseificio/delizia.html">Delizia S.p.A.</a><br><span class="meta">dairy · 201–500</span></td>
+        <td><span class="pill p-cold t" data-it="Freddo — grande">Cold — big</span></td>
+        <td class="t" data-it="Gestisci più ordini B2B con lo stesso team — basta ribattere a mano. Valida: ordini/giorno, gestione manuale, % errori/resi.">Process more B2B orders with the same team — no more re-typing. Validate: orders/day, manual handling, error/refund rate.</td>
+        <td><span class="gain">€60–120k</span></td><td><span class="ask">~€9k/yr + €5k setup</span></td>
+        <td>Support Mailboxes</td>
+        <td><a class="pitchlink" href="#d-del">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.cnispa.it/">CNI S.p.A.</a><br><span class="meta">doc/BPO · Rutigliano</span></td>
+        <td><span class="pill p-flag">Partner</span></td>
+        <td class="t" data-it="Il vostro paper→digitale è manuale — l'AI moltiplica quanti documenti processa ogni persona. Valida: documenti/anno, costo/doc, limiti di capacità.">Your paper→digital work is manual — AI multiplies docs processed per person. Validate: docs/yr, cost/doc, throughput limits.</td>
+        <td><span class="gain">€100k+</span></td><td><span class="ask t" data-it="progetto + rev-share">project + rev-share</span></td>
+        <td>doc pipeline</td>
+        <td><a class="pitchlink" href="#d-cni">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.coobiz.it/azienda/noci-progettazione-produzione/co2177408">S.M.A. Industria</a><br><span class="meta">env-control</span></td>
+        <td><span class="pill p-cold t" data-it="Freddo">Cold</span></td>
+        <td class="t" data-it="Chi manda il preventivo per primo vince — i tuoi preventivi escono 2–3× più veloci. Valida: € preventivati/anno, win rate, tempi.">First to send the quote wins — I get your quotes out 2–3× faster. Validate: €/yr quoted, win rate, turnaround.</td>
+        <td><span class="gain">€50k+</span></td><td><span class="ask">~€6k/yr + €3k setup</span></td>
+        <td>Diagram/PDF Builder</td>
+        <td><a class="pitchlink" href="#d-sma">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://purobiocosmetics.it/contatti/">puroBIO</a><br><span class="meta">cosmetics · 31</span></td>
+        <td><span class="pill p-cold t" data-it="Freddo/locale">Cold/local</span></td>
+        <td class="t" data-it="Cresci su e-commerce ed export senza ingrandire il supporto; attivi i rivenditori più in fretta. Valida: volume CS, tempo onboarding rivenditori.">Grow e-comm & export without growing support; activate resellers faster. Validate: CS volume, reseller onboarding time.</td>
+        <td><span class="gain">€30–50k</span></td><td><span class="ask">~€4k/yr + €2k setup</span></td>
+        <td>HR Onboarding</td>
+        <td><a class="pitchlink" href="#d-puro">Pitch →</a></td></tr>
+      <tr><td><span class="pill p-new">NEW</span> <span class="t" data-it="Esportatore olio/vino">Oil/wine exporter</span><br><span class="meta">Frantoio Forti, Cantine di Marco…</span></td>
+        <td><span class="pill p-cold t" data-it="Settore">Sector</span></td>
+        <td class="t" data-it="L'export è in boom — vendi in più paesi senza assumere; ordini, documenti e cataloghi multilingua all'istante. Valida: % export, canali ordini, carico lingue.">Export is booming — sell into more countries without hiring; instant multilingual orders, docs & catalogues. Validate: export %, order channels, language load.</td>
+        <td><span class="gain">€40–90k</span></td><td><span class="ask">~€6k/yr + €3k setup</span></td>
+        <td>Lead Enrichment Agent</td>
+        <td><a class="pitchlink" href="#d-oil">Pitch →</a></td></tr>
+      <tr><td><span class="pill p-new">NEW</span> <span class="t" data-it="Commercialista">Commercialista</span><br><span class="meta">Studio Sgobba…</span></td>
+        <td><span class="pill p-cold t" data-it="Settore">Sector</span></td>
+        <td class="t" data-it="Segui più clienti per professionista — l'AI gestisce raccolta documenti, solleciti, controlli incrociati. Valida: clienti/professionista, ore su lavoro ripetitivo.">More clients per professional — AI handles document chasing, reminders, data cross-checks. Validate: clients/pro, repetitive doc hours.</td>
+        <td><span class="gain">€30–60k</span></td><td><span class="ask">€249/mo + setup</span></td>
+        <td>doc pipeline</td>
+        <td><a class="pitchlink" href="#d-comm">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.informazione-aziende.it/Azienda_CASEIFICIO-PUGLIALAT-SRL">Caseificio Puglialat</a><br><span class="meta t" data-it="latticini · piccolo">dairy · smaller</span></td>
+        <td><span class="pill p-cold t" data-it="Freddo/locale">Cold/local</span></td>
+        <td class="t" data-it="Gestisci più riordini con lo stesso ufficio. Valida: volume riordini, domande sulle consegne.">Handle more reorders with the same office. Validate: reorder volume, delivery queries.</td>
+        <td><span class="gain">€20–40k</span></td><td><span class="ask">~€3k/yr + €1.5k setup</span></td>
+        <td>Support Mailboxes</td>
+        <td><a class="pitchlink" href="#d-pugl">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.inpelleitalia.it/">Nuova Pugliatex</a><br><span class="meta">fabrics/leather</span></td>
+        <td><span class="pill p-cold t" data-it="Freddo/locale">Cold/local</span></td>
+        <td class="t" data-it="Ogni richiesta campioni e ogni rivenditore diventa follow-up automatico. Valida: volume richieste, conversione.">Every sample request & reseller enquiry becomes automatic follow-up. Validate: enquiry volume, conversion.</td>
+        <td><span class="gain">€15–30k</span></td><td><span class="ask">~€2.5k/yr + €2k setup</span></td>
+        <td>Lead Enrichment Agent</td>
+        <td><a class="pitchlink" href="#d-pug">Pitch →</a></td></tr>
+      <tr><td><a class="link" href="https://www.masseriabonelli.it/">Masseria Bonelli</a><br><span class="meta t" data-it="matrimoni (solo 1 tenuta)">weddings (only 1 kept)</span></td>
+        <td><span class="pill p-flag t" data-it="Valida">Validate</span></td>
+        <td class="t" data-it="Solo se NON sono al completo: «non perdi una coppia per una risposta lenta». Valida PRIMA: sono pieni 18–24 mesi avanti? Se sì → coordinamento pipeline, non lead-gen.">Only if NOT full: "never lose a couple to a slow reply." Validate FIRST: booked out 18–24mo? If yes → pipeline coordination, not lead-gen.</td>
+        <td><span class="gain">~€15–30k</span></td><td><span class="ask">~€3k/yr</span></td>
+        <td>Lead Enrichment Agent</td>
+        <td><a class="pitchlink" href="#d-mass">Pitch →</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="meta t" data-it="*Stima annua prudente — apri ogni pitch e modifica il calcolatore con i numeri veri durante la discovery.">*Conservative annual estimate — open each pitch and edit the calculator with their real numbers during discovery.</p>
+</section>
+
+<!-- MARIANA -->
+<section id="mariana">
+  <h2><span class="num">3</span><span class="t" data-it="Stasera con Mariana — prima discovery, poi l'intro">Tonight with Mariana — discovery first, then the intro</span></h2>
+  <div class="card warm">
+    <h3 style="margin-top:0;" class="t" data-it="1 · Disinnesca la paura">1 · Disarm the fear</h3>
+    <div class="hook">"Mariana, lo so che si dice che l'AI ruba il lavoro — io faccio l'opposto. Tolgo il lavoro noioso e ripetitivo, tipo tradurre i cataloghi a mano, così l'azienda cresce e apre in nuove zone <b>senza assumere dieci persone in più</b>. Chi già lavora lì rende di più e i soldi risparmiati restano in azienda. Nessuno perde il posto — si lavora meglio."</div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0;" class="t" data-it="2 · Discovery — il vero obiettivo di stasera">2 · Discovery — the real goal tonight</h3>
+    <div class="hook">"Posso farti qualche domanda su come lavorate davvero?<br>• Chi traduce i cataloghi e quanto tempo ci vuole?<br>• Cosa rifate <b>a mano</b> ogni settimana — preventivi, ordini, risposte sui ricambi?<br>• Ora che aprite in nuove zone, cosa vi rallenta di più?<br>• Di cosa si lamenta <b>Tommaso</b>?"</div>
+    <p class="meta" style="margin-bottom:0;" class="t" data-it="Scrivi le risposte — scelgono aggancio, numeri del calcolatore e prezzo per Tommaso. Non vendere ancora.">Write the answers down — they pick the hook, the calculator inputs and the price for Tommaso. Don't pitch yet.</p>
+  </div>
+  <div class="card tip">
+    <h3 style="margin-top:0;" class="t" data-it="3 · L'intro che Mariana dà a Tommaso (di persona)">3 · The intro Mariana gives Tommaso (in person)</h3>
+    <div class="hook">"Tommaso, ho un'amica fidata che lavora con l'AI per le aziende — automatizza il lavoro ripetitivo tipo traduzioni dei cataloghi, preventivi, risposte sui ricambi. Si è offerta di farci una <b>prova gratis su un catalogo</b>, vedi il risultato senza impegno. Le dai 20 minuti?"</div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section id="details">
+  <h2><span class="num">4</span><span class="t" data-it="Pitch + calcolatori ROI dal vivo">Pitches + live ROI calculators</span></h2>
+  <p class="sub t" data-it="Pitch in italiano (in modalità EN trovi la traduzione). Ogni calcolatore è dal vivo: il tuo prezzo è sempre il 10% del guadagno.">Hooks shown in English here (switch to IT for the Italian script). Every calculator is live — your price is always 10% of the gain.</p>
+
+  <!-- KLIMA -->
+  <div class="card detail-card" id="d-klima">
+    <div class="dh"><h3 style="margin:0;">Klimaitalia</h3><span class="pill p-warm">WARM</span></div>
+    <div class="hook t" data-it="«Pagate persone solo per tradurre i cataloghi. L'AI lo fa in tutte le lingue in pochi minuti, e lo stesso motore prepara i preventivi e risponde sui ricambi — così crescete e aprite nuovi mercati senza assumere. Ve lo dimostro gratis su un catalogo.»">"You pay people just to translate catalogues. AI does it in every language in minutes, and the same engine drafts your quotes and answers spare-parts questions — so you grow and open new markets without hiring. I'll prove it free on one catalogue."</div>
+    <div class="roi" id="roi-klima"><div class="roi-title">Klimaitalia — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Assunzioni evitate crescendo">Hires avoided while growing</span><input type="number" data-k="hires" value="1"></label>
+        <label><span class="t" data-it="Costo annuo per persona, Sud (€)">Cost per person/yr, South (€)</span><input type="number" data-k="cost" value="32000"></label>
+        <label><span class="t" data-it="Fatturato export extra abilitato (€)">Extra export revenue enabled (€)</span><input type="number" data-k="extra" value="15000"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="guadagno/anno (loro)">gain/yr (theirs)</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: ~€7k/anno (≈€580/mese) + €3k setup. «Meno di un mese di stipendio, ma lavora 24/7 in ogni lingua.»">Price: ~€7k/yr (≈€580/mo) + €3k setup. "Less than one month's salary, but it works 24/7 in every language."</p>
+  </div>
+
+  <!-- DENTIST -->
+  <div class="card detail-card" id="d-dent">
+    <div class="dh"><h3 style="margin:0;">Dentists (group)</h3><span class="pill p-warm">WARM · Annalaura</span></div>
+    <div class="hook t" data-it="«Ogni chiamata persa è un paziente perso — e il 75% di chi non trova risposta chiama un altro studio. Metto un assistente che risponde, prenota e manda i promemoria su WhatsApp 24/7. Paghi un piccolo canone e una quota solo sui nuovi pazienti che ti porto.»">"Every missed call is a lost patient — and 75% of people who don't get an answer call another practice. I put in an assistant that answers, books and sends reminders on WhatsApp 24/7. You pay a small base fee plus a fee only on the new patients I bring you."</div>
+    <div class="roi" id="roi-dent"><div class="roi-title">Dentist — ROI calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Chiamate perse/settimana">Missed calls/week</span><input type="number" data-k="missed" value="15"></label>
+        <label><span class="t" data-it="% chiamate da nuovi pazienti">% calls from new patients</span><input type="number" data-k="newpct" value="40"></label>
+        <label><span class="t" data-it="% catturate dall'AI">% captured by AI</span><input type="number" data-k="capture" value="30"></label>
+        <label><span class="t" data-it="Valore nuovo paziente, 1° anno (€)">New patient value, yr 1 (€)</span><input type="number" data-k="value" value="1300"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="patients">0</span><small class="t" data-it="nuovi pazienti/anno recuperati">new patients/yr recovered</small></div>
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="fatturato recuperato/anno">revenue recovered/yr</small></div>
+        <div><span class="big i" data-out="roi">0×</span><small class="t" data-it="ritorno vs il tuo prezzo">return vs your price</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo (modello di Ranbir, reso onesto): base €199/mese + €40 per nuovo paziente PRENOTATO. Legato a un evento misurabile, non a una % di fatturato vaga.">Price (Ranbir's model, made honest): base €199/mo + €40 per booked new patient. Tied to a countable event, not a fuzzy revenue %.</p>
+  </div>
+
+  <!-- DELIZIA -->
+  <div class="card detail-card" id="d-del">
+    <div class="dh"><h3 style="margin:0;">Delizia S.p.A.</h3><span class="pill p-cold t" data-it="budget maggiore">biggest budget</span></div>
+    <div class="hook t" data-it="«I vostri clienti B2B ordinano per telefono, email e WhatsApp e l'ufficio ribatte tutto a mano. Trasformo gli ordini disordinati in ordini strutturati e confermati in automatico: gestite più ordini con lo stesso team, meno errori, clienti aggiornati senza rincorrere nessuno.»">"Your B2B customers order by phone, email and WhatsApp and the office re-types it all. I turn messy orders into structured, confirmed ones automatically: you handle more orders with the same team, fewer errors, customers updated without anyone chasing."</div>
+    <div class="roi" id="roi-del"><div class="roi-title">Delizia — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Ordini al giorno">Orders per day</span><input type="number" data-k="orders" value="80"></label>
+        <label><span class="t" data-it="Minuti manuali per ordine">Manual minutes per order</span><input type="number" data-k="mins" value="8"></label>
+        <label><span class="t" data-it="Costo orario ufficio (€)">Office hourly cost (€)</span><input type="number" data-k="rate" value="25"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="hours">0</span><small class="t" data-it="ore/anno liberate (≈ FTE)">hours/yr freed (≈ FTE)</small></div>
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="valore capacità/anno">capacity value/yr</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: 10% del valore (~€9k/anno) + €5k setup. Caso studio di punta.">Price: 10% of value (~€9k/yr) + €5k setup. Flagship case study.</p>
+  </div>
+
+  <!-- CNI -->
+  <div class="card detail-card" id="d-cni">
+    <div class="dh"><h3 style="margin:0;">CNI S.p.A. (Rutigliano)</h3><span class="pill p-flag t" data-it="da partner">partner play</span></div>
+    <div class="hook t" data-it="«Il vostro core business è portare la carta al digitale — ma lo fate in modo molto manuale. L'AI estrae e classifica i documenti e moltiplica quanti ne processa ogni persona: più volumi, stessi costi. Posso accelerare il vostro BPO o costruirvi un modulo AI da rivendere ai vostri clienti.»">"Your core business is turning paper into digital — but you do it very manually. AI extracts and classifies documents and multiplies how many each person processes: more volume, same cost. I can speed up your BPO, or build you an AI module to resell to your own clients."</div>
+    <div class="roi" id="roi-cni"><div class="roi-title">CNI — throughput calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Documenti processati/anno">Documents processed/yr</span><input type="number" data-k="docs" value="200000"></label>
+        <label><span class="t" data-it="Costo manuale per documento (€)">Manual cost per document (€)</span><input type="number" data-k="cost" value="3"></label>
+        <label><span class="t" data-it="% lavoro ridotto/accelerato dall'AI">% work cut/accelerated by AI</span><input type="number" data-k="cut" value="55"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="capacità/risparmio/anno">capacity/saving/yr</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: progetto + rev-share sulla capacità extra. Priorità bassa — riprendi con 2–3 casi studio.">Price: project + revenue-share on the extra capacity. Low priority — revisit with 2–3 case studies.</p>
+  </div>
+
+  <!-- SMA -->
+  <div class="card detail-card" id="d-sma">
+    <div class="dh"><h3 style="margin:0;">S.M.A. Industria</h3></div>
+    <div class="hook t" data-it="«Il 78% dei clienti B2B compra da chi risponde per primo. I vostri tecnici impiegano ore a fare i preventivi — io li faccio generare in automatico dal vostro catalogo e listino: preventivi fuori 2–3× più veloci, più gare vinte.»">"78% of B2B buyers buy from whoever responds first. Your engineers spend hours building quotes — I generate them automatically from your catalogue and price list: quotes out 2–3× faster, more tenders won."</div>
+    <div class="roi" id="roi-sma"><div class="roi-title">S.M.A. — revenue calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Valore preventivi emessi/anno (€)">Value of quotes issued/yr (€)</span><input type="number" data-k="quoted" value="1500000"></label>
+        <label><span class="t" data-it="Win rate attuale (%)">Current win rate (%)</span><input type="number" data-k="win" value="20"></label>
+        <label><span class="t" data-it="Aumento win rate (punti %)">Win-rate lift (pts %)</span><input type="number" data-k="lift" value="4"></label>
+        <label><span class="t" data-it="Margine medio (%)">Average margin (%)</span><input type="number" data-k="margin" value="20"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="rev">€0</span><small class="t" data-it="fatturato extra/anno">extra revenue/yr</small></div>
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="margine extra/anno (guadagno)">extra margin/yr (gain)</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: 10% del margine extra (~€6k/anno) + €3k setup, + bonus per gara vinta quando c'è fiducia.">Price: 10% of extra margin (~€6k/yr) + €3k setup, + per-won-tender bonus once trust exists.</p>
+  </div>
+
+  <!-- PUROBIO -->
+  <div class="card detail-card" id="d-puro">
+    <div class="dh"><h3 style="margin:0;">puroBIO (Mami Srl)</h3></div>
+    <div class="hook t" data-it="«Crescete su e-commerce ed export rispondendo alle stesse domande in più lingue tutto il giorno. Deflettiamo le ripetitive e attiviamo i nuovi rivenditori più in fretta — più vendite senza ingrandire il team di supporto.»">"You grow e-commerce and export while answering the same questions in several languages all day. We deflect the repetitive ones and activate new resellers faster — more sales without growing the support team."</div>
+    <div class="roi" id="roi-puro"><div class="roi-title">puroBIO — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Assunzioni supporto evitate">Support hires avoided</span><input type="number" data-k="hires" value="1"></label>
+        <label><span class="t" data-it="Costo annuo per persona, Sud (€)">Cost per person/yr, South (€)</span><input type="number" data-k="cost" value="32000"></label>
+        <label><span class="t" data-it="Fatturato extra da rivenditori attivati prima (€)">Extra revenue from faster reseller activation (€)</span><input type="number" data-k="extra" value="8000"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="guadagno/anno (loro)">gain/yr (theirs)</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: ~€4k/anno + €2k setup.">Price: ~€4k/yr + €2k setup.</p>
+  </div>
+
+  <!-- OIL -->
+  <div class="card detail-card" id="d-oil">
+    <div class="dh"><h3 style="margin:0;"><span class="t" data-it="Esportatore olio/vino">Oil / wine exporter</span></h3><span class="pill p-new">NEW SECTOR</span></div>
+    <div class="hook t" data-it="«L'export pugliese di olio e vino è in forte crescita (olio +60% nel 2024). Vendete in più paesi senza assumere: ordini, documenti export e cataloghi gestiti all'istante in ogni lingua, e nessun contatto estero perso per una risposta lenta.»">"Puglia's oil and wine exports are surging (olive oil +60% in 2024). You sell into more countries without hiring: orders, export documents and catalogues handled instantly in any language, and no foreign enquiry lost to a slow reply."</div>
+    <div class="roi" id="roi-oil"><div class="roi-title">Oil/wine — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Assunzioni export evitate">Export hires avoided</span><input type="number" data-k="hires" value="1"></label>
+        <label><span class="t" data-it="Costo annuo per persona, Sud (€)">Cost per person/yr, South (€)</span><input type="number" data-k="cost" value="32000"></label>
+        <label><span class="t" data-it="Fatturato export extra abilitato (€)">Extra export revenue enabled (€)</span><input type="number" data-k="extra" value="20000"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="guadagno/anno (loro)">gain/yr (theirs)</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Aziende reali (vedi sezione Nuovi settori): Frantoio Forti (nato a Noci), Cantine di Marco, I Pàstini. Prezzo: ~€6k/anno + €3k setup.">Real companies (see New sectors): Frantoio Forti (born in Noci), Cantine di Marco, I Pàstini. Price: ~€6k/yr + €3k setup.</p>
+  </div>
+
+  <!-- COMMERCIALISTA -->
+  <div class="card detail-card" id="d-comm">
+    <div class="dh"><h3 style="margin:0;">Commercialista / studio</h3><span class="pill p-new">NEW SECTOR</span></div>
+    <div class="hook t" data-it="«Il vostro studio perde ore su raccolta documenti, solleciti, scadenze e controlli incrociati. Automatizzo le parti ripetitive così seguite più clienti con gli stessi professionisti — più clienti, più fatturato, senza assumere.»">"Your firm loses hours on document collection, reminders, deadlines and data cross-checks. I automate the repetitive parts so you serve more clients with the same professionals — more clients, more revenue, no new hires."</div>
+    <div class="roi" id="roi-comm"><div class="roi-title">Commercialista — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Clienti extra gestibili/anno">Extra clients handled/yr</span><input type="number" data-k="clients" value="20"></label>
+        <label><span class="t" data-it="Fatturato medio per cliente/anno (€)">Avg revenue per client/yr (€)</span><input type="number" data-k="fee" value="2000"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="fatturato extra/anno">extra revenue/yr</small></div>
+        <div><span class="big b" data-out="yourfee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Replicabile come i dentisti. Prezzo: €249/mese + setup. Target reali: Studio Sgobba e altri (vedi Nuovi settori).">Replicable like dentists. Price: €249/mo + setup. Real targets: Studio Sgobba and others (see New sectors).</p>
+  </div>
+
+  <!-- SMALLER -->
+  <div class="card detail-card" id="d-pugl">
+    <div class="dh"><h3 style="margin:0;">Caseificio Puglialat</h3></div>
+    <div class="hook t" data-it="«Gestite più riordini con lo stesso ufficio: raccolta riordini e aggiornamenti consegne automatici.»">"Handle more reorders with the same office: automated reorder intake and delivery updates."</div>
+    <div class="roi" id="roi-pugl"><div class="roi-title">Puglialat — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Riordini al giorno">Reorders per day</span><input type="number" data-k="orders" value="25"></label>
+        <label><span class="t" data-it="Minuti manuali per riordine">Manual minutes per reorder</span><input type="number" data-k="mins" value="7"></label>
+        <label><span class="t" data-it="Costo orario ufficio (€)">Office hourly cost (€)</span><input type="number" data-k="rate" value="22"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="valore capacità/anno">capacity value/yr</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: ~€3k/anno + €1.5k setup. Buon secondo caso studio nel settore latticini.">Price: ~€3k/yr + €1.5k setup. Good second dairy reference.</p>
+  </div>
+
+  <div class="card detail-card" id="d-pug">
+    <div class="dh"><h3 style="margin:0;">Nuova Pugliatex</h3></div>
+    <div class="hook t" data-it="«Ogni richiesta di campioni e ogni rivenditore diventano un follow-up automatico, in ogni lingua.»">"Every sample request and reseller enquiry becomes an automatic follow-up, in any language."</div>
+    <div class="roi" id="roi-pug"><div class="roi-title">Pugliatex — value calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Richieste/anno">Enquiries/yr</span><input type="number" data-k="enq" value="1200"></label>
+        <label><span class="t" data-it="% extra convertite con follow-up">% extra converted by follow-up</span><input type="number" data-k="conv" value="5"></label>
+        <label><span class="t" data-it="Valore medio ordine (€)">Avg order value (€)</span><input type="number" data-k="val" value="400"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="fatturato extra/anno">extra revenue/yr</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: ~€2.5k/anno + €2k setup.">Price: ~€2.5k/yr + €2k setup.</p>
+  </div>
+
+  <div class="card detail-card flag" id="d-mass">
+    <div class="dh"><h3 style="margin:0;">Masseria Bonelli</h3><span class="pill p-flag t" data-it="valida prima di costruire">validate before building</span></div>
+    <p style="margin:0 0 6px;" class="t" data-it="Discovery prima: «Siete pieni o vi capita di rifiutare richieste? Chi risponde alle richieste di sabato sera?» Le masserie in Puglia prenotano 18–24 mesi avanti e sono spesso al completo — se è così, il lead-gen NON è la difficoltà."><b>Discovery first:</b> "Are you full, or do you turn away enquiries? Who answers requests on a Saturday night?" Puglia masserie book 18–24 months ahead and are often full — if so, lead-gen is NOT the pain.</p>
+    <p style="margin:0;" class="meta t" data-it="Se pieni → coordinamento pipeline multilingua (coppie, fornitori, scadenze pagamenti), ~€3k/anno. Se hanno buchi in bassa stagione → cattura lead multilingua, a lead qualificato. Non costruire finché una masseria non conferma la difficoltà.">If full → multilingual pipeline coordination (couples, suppliers, payment schedules), ~€3k/yr. If shoulder-season gaps → multilingual lead capture, per qualified lead. Don't build until a venue confirms the pain.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <h2><span class="num">5</span><span class="t" data-it="Prezzo — la tua regola e come validarla">Pricing — your rule and how to validate it</span></h2>
+  <div class="card tip">
+    <h3 style="margin-top:0;" class="t" data-it="La tua regola: 10% del guadagno + setup">Your rule: 10% of the gain + setup</h3>
+    <p style="margin-bottom:0;" class="t" data-it="Compenso annuo = 10% del valore annuo creato (di solito diviso al mese). Loro tengono il 90% — è un sì facile. In più un setup una tantum per costruire (lo vedi nei prezzi). Crescita = più clienti con lo stesso lavoro riusato. I dati di mercato confermano: stesso lavoro può valere €3k o €15k a seconda del valore generato — esattamente la logica del 10%.">Annual fee = 10% of the annual value created (usually split monthly). They keep 90% — an easy yes. Plus a one-off setup fee to build. Growth = more clients with the same reused build. Market data backs this: the same workflow can be worth €3k or €15k depending on the value it creates — exactly the 10% logic.</p>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3 style="margin-top:0;" class="t" data-it="Riferimenti di mercato">Market benchmarks</h3>
+      <ul style="margin-bottom:0;">
+        <li class="t" data-it="Italia PMI: setup €2–8k; strutturato €2–10k/mese; payback 6–14 mesi">Italy SME: setup €2–8k; structured €2–10k/mo; payback 6–14mo</li>
+        <li class="t" data-it="Globale: progetti $1.5–15k; retainer $500–8k/mese">Global: projects $1.5–15k; retainers $500–8k/mo</li>
+        <li class="t" data-it="LTV cliente retainer: $22–33k (base), $49–77k (growth), 11–14 mesi">Retainer client LTV: $22–33k (base), $49–77k (growth), 11–14 months</li>
+        <li class="t" data-it="Freelance n8n/Make: $125–250/ora">Freelance n8n/Make: $125–250/hr</li>
+        <li class="t" data-it="Receptionist AI dentale: €199–499/mese">Dental AI receptionist: €199–499/mo</li>
+      </ul></div>
+    <div class="card"><h3 style="margin-top:0;" class="t" data-it="Come validare il prezzo questa settimana">How to validate pricing this week</h3>
+      <ul style="margin-bottom:0;">
+        <li class="t" data-it="Leggi/cerca nelle community: r/automation, r/n8n, r/AI_Agents, r/Entrepreneur, r/msp, Indie Hackers, forum n8n/Make, gruppi Skool/Discord di AI automation">Lurk/search communities: r/automation, r/n8n, r/AI_Agents, r/Entrepreneur, r/msp, Indie Hackers, n8n/Make forums, AI-automation Skool/Discord groups</li>
+        <li class="t" data-it="Se non c'è una risposta chiara → pubblica la domanda (bozza sotto)">If there's no clear answer → post the question (draft below)</li>
+        <li class="t" data-it="Posta anche in una community di settore (es. dentisti) per capire quanto pagano davvero per la reception AI">Also post in an industry community (e.g. dentists) to learn what they actually pay for AI reception</li>
+        <li class="t" data-it="Chiedi sempre «quanto pagheresti?» in discovery — ora hai dei riferimenti">Always ask "how much would you pay?" in discovery — now you have anchors</li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors">
+  <h2><span class="num">6</span><span class="t" data-it="Nuovi settori — aziende reali con contatti">New sectors — real companies with contacts</span></h2>
+  <p class="sub t" data-it="Sostituiscono le masserie già piene. Criteri: difficoltà monetaria grande + disposti a pagare + scalabile + il tuo vantaggio multilingua/documenti.">Replacing the already-full wedding venues. Criteria: big monetary pain + willing to pay + scalable + your multilingual/document edge.</p>
+  <div class="grid2">
+    <div class="card"><h3 style="margin-top:0;">🫒 <span class="t" data-it="Esportatori olio/vino">Oil / wine exporters</span></h3>
+      <ul style="margin-bottom:8px;">
+        <li><a class="link" href="https://www.foleum.shop/en/">Frantoio Forti</a> — <span class="t" data-it="nato a Noci, ora Locorotondo; olio EVO, export/e-commerce">born in Noci, now Locorotondo; EVOO, export/e-comm</span></li>
+        <li><a class="link" href="https://www.cantinedimarco.com/">Cantine di Marco</a> — <span class="t" data-it="Martina Franca; export vini; +39 0804801193, info@cantinedimarco.it">Martina Franca; wine export; +39 0804801193, info@cantinedimarco.it</span></li>
+        <li><a class="link" href="https://www.ipastini.it/">I Pàstini</a> — <span class="t" data-it="Valle d'Itria, tra Locorotondo e Martina Franca">Valle d'Itria, between Locorotondo & Martina Franca</span></li>
+        <li><a class="link" href="https://www.oleificiopetruzzi.com/servizi/">Oleificio Petruzzi</a> · Terra Jovia (Gioia del Colle) · Cardone Vini</li>
+      </ul>
+      <p class="meta" style="margin:0;" class="t" data-it="Trova altri: ExportPuglia, Europages (olio Bari/Puglia), frantoi/cantine della Murgia.">Find more: <a class="link" href="https://b2b.exportpuglia.it/it/catalogo/15/Olio">ExportPuglia</a>, <a class="link" href="https://www.europages.it/aziende/italia/bari%20e%20puglia/olio%20di%20oliva%20extra.html">Europages</a>.</p>
+    </div>
+    <div class="card"><h3 style="margin-top:0;">📊 <span class="t" data-it="Commercialisti (Noci)">Commercialisti (Noci)</span></h3>
+      <ul style="margin-bottom:8px;">
+        <li><a class="link" href="https://www.paginebianche.it/studiosgobba-commercialista-noci">Studio Sgobba</a> — Via Foggia di Totos 5/A · 080 4974074</li>
+        <li>Casulli Angela — 080 4970345</li>
+        <li>Losavio Silvia — 080 4949034</li>
+        <li>Fasano Maria Luisa — 080 4943220</li>
+        <li>Gentile Paolo Vincenzo — 080 4979493</li>
+      </ul>
+      <p class="meta" style="margin:0;" class="t" data-it="Replicabile come i dentisti. Ottimo se qualcuno in famiglia/rete conosce un commercialista.">Replicable like dentists. Best if someone in your family/network knows a commercialista.</p>
+    </div>
+  </div>
+  <div class="card" style="padding:13px 18px;">
+    <p style="margin:0 0 6px;font-weight:700;color:var(--slate);" class="t" data-it="Panchina — usa se un target si blocca">Bench — swap in if a target stalls</p>
+    <a class="tag" href="https://www.europages.it/aziende/italia/bari%20e%20puglia/trasformazione-alimentare.html">Food processors — Bari/Puglia</a>
+    <a class="tag" href="https://www.coobiz.it/azienda/noci-commercio-dettaglio/co3774533">Gigante Alimentari — Noci</a>
+    <span class="tag">Salumifici "coppa Murgia"</span>
+    <span class="tag">Chocolate producers</span>
+    <span class="tag">Casa di Cura Monte Imperatore — clinic</span>
+    <span class="tag">Insurance brokers / property managers</span>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <h2><span class="num">7</span><span class="t" data-it="Il piano (sei in Italia ~1 settimana)">The plan (you're in Italy ~1 week)</span></h2>
+  <div class="step"><div class="n">1</div><div class="t" data-it="OGGI. Manda i WhatsApp a Anna Laura (intro dentista) e Manfredi (contatti per incontri di persona). Stasera: Mariana — rassicura → discovery → intro a Tommaso."><strong>TODAY.</strong> Send the WhatsApps to Annalaura (dentist intro) and Manfredi (in-person contacts). Tonight: Mariana — reassure → discovery → intro to Tommaso.</div></div>
+  <div class="step"><div class="n">2</div><div class="t" data-it="DOMANI. Manda questo doc a Ranbir (modalità EN) per un suo parere. Metti una sveglia/promemoria la mattina."><strong>TOMORROW.</strong> Send this doc to Ranbir (EN mode) for his take. Set an alarm/reminder in the morning.</div></div>
+  <div class="step"><div class="n">3</div><div class="t" data-it="QUESTA SETTIMANA. Prepara il catalogo tradotto gratis per Klimaitalia (demo + 1° caso studio). Fai gli incontri di persona che Manfredi sblocca. Chiama 2–3 target di un nuovo settore (Studio Sgobba, Frantoio Forti, Cantine di Marco)."><strong>THIS WEEK.</strong> Prepare the free translated catalogue for Klimaitalia (demo + first case study). Take any in-person meetings Manfredi unlocks. Call 2–3 new-sector targets (Studio Sgobba, Frantoio Forti, Cantine di Marco).</div></div>
+  <div class="step"><div class="n">4</div><div class="t" data-it="IN PARALLELO. Valida il prezzo: leggi le community e, se serve, pubblica la bozza di post. Nelle discovery riempi i calcolatori con i numeri veri."><strong>IN PARALLEL.</strong> Validate pricing: read the communities and, if needed, post the draft. In discovery calls, fill the calculators with real numbers.</div></div>
+  <div class="step"><div class="n">5</div><div class="t" data-it="DOPO LA VALIDAZIONE (non prima). Per chi è più caldo: costruisci il deck (Gamma) e, solo per i dentisti, il calcolatore Lovable. Poi un pilota gratis/a costo → caso studio con i soldi guadagnati → cliente successivo a prezzo pieno."><strong>AFTER VALIDATION (not before).</strong> For whoever's hottest: build the deck (Gamma) and, only for dentists, the Lovable calculator. Then one free/at-cost pilot → case study (money gained) → next client at full price.</div></div>
+</section>
+
+<footer>
+  <p class="t" data-it="Companion alla Operational Efficiency Venture Map. Self-contained — i calcolatori funzionano offline. Condividi come file, o trascina su app.netlify.com/drop per un link pubblico.">Companion to the Operational Efficiency Venture Map. Self-contained — calculators run offline. Share as a file, or drag onto app.netlify.com/drop for a public link.</p>
+</footer>
+
+</div>
+
+<script>
+  // ---- language toggle ----
+  function setLang(lang){
+    document.querySelectorAll('.t').forEach(el=>{
+      if(el.dataset.en===undefined) el.dataset.en = el.textContent;
+      el.textContent = (lang==='it' ? (el.dataset.it||el.dataset.en) : el.dataset.en);
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('b-en').classList.toggle('on', lang==='en');
+    document.getElementById('b-it').classList.toggle('on', lang==='it');
+  }
+  // cache English on load
+  document.querySelectorAll('.t').forEach(el=>{ el.dataset.en = el.textContent; });
+
+  // ---- calculators (price = 10% of gain) ----
+  const fmt = n => '€' + Math.round(n).toLocaleString('it-IT');
+  function set(root,o){ for(const k in o){ const e=root.querySelector('[data-out="'+k+'"]'); if(e) e.textContent=o[k]; } }
+  function wire(id,fn){ const r=document.getElementById(id); if(!r) return; const ins=r.querySelectorAll('input');
+    const run=()=>{const v={};ins.forEach(i=>v[i.dataset.k]=parseFloat(i.value)||0); set(r,fn(v));};
+    ins.forEach(i=>i.addEventListener('input',run)); run(); }
+  const pb = g => ({ gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) });
+
+  wire('roi-klima', v => pb(v.hires*v.cost + v.extra));
+  wire('roi-puro',  v => pb(v.hires*v.cost + v.extra));
+  wire('roi-oil',   v => pb(v.hires*v.cost + v.extra));
+  wire('roi-dent',  v => { const p=v.missed*52*(v.newpct/100)*(v.capture/100), g=p*v.value, price=199*12+p*40;
+    return { patients:Math.round(p), gain:fmt(g), roi:(g/price).toFixed(1)+'×' }; });
+  wire('roi-del',   v => { const h=v.orders*(v.mins/60)*300, g=h*v.rate; return { hours:Math.round(h), gain:fmt(g), fee:fmt(g*0.10) }; });
+  wire('roi-pugl',  v => { const h=v.orders*(v.mins/60)*300, g=h*v.rate; return { gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) }; });
+  wire('roi-cni',   v => { const g=v.docs*v.cost*(v.cut/100); return { gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) }; });
+  wire('roi-sma',   v => { const rev=v.quoted*(v.lift/100), g=rev*(v.margin/100); return { rev:fmt(rev), gain:fmt(g), fee:fmt(g*0.10) }; });
+  wire('roi-comm',  v => { const g=v.clients*v.fee; return { gain:fmt(g), yourfee:fmt(g*0.10), keep:fmt(g*0.90) }; });
+  wire('roi-pug',   v => { const g=v.enq*(v.conv/100)*v.val; return { gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) }; });
+</script>
+</body>
+</html>
