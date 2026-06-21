@@ -115,6 +115,12 @@
       <th class="t" data-it="Tuo asset da riusare">Your build to reuse</th><th>Pitch</th>
     </tr></thead>
     <tbody>
+      <tr><td><a class="link" href="https://www.euroqualitylab.it/">EuroQuality Lab</a><br><span class="meta">laboratorio analisi · Gioia del Colle</span></td>
+        <td><span class="pill p-warm">WARM</span><br><span class="meta t" data-it="amico del fratello">brother's friend</span></td>
+        <td class="t" data-it="Refertate di più con lo stesso team e consegnate i rapporti più in fretta — i dati passano dallo strumento al referto da soli. Valida: rapporti/giorno, trascrizione manuale, tempi dei preventivi, % clienti esteri.">Issue more reports with the same team, faster — instrument data flows into the report by itself. Validate: reports/day, manual transcription, quote turnaround, % export clients.</td>
+        <td><span class="gain">€40–90k</span></td><td><span class="ask">~€6k/yr + €3k setup</span></td>
+        <td><a class="link" href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1843691973">Release Notes Review</a></td>
+        <td><a class="pitchlink" href="#d-lab">Pitch →</a></td></tr>
       <tr><td><a class="link" href="https://www.klimaitalia.it/en/company/">Klimaitalia</a><br><span class="meta">refrigeration</span></td>
         <td><span class="pill p-warm">WARM</span><br><span class="meta">Mariana</span></td>
         <td class="t" data-it="Cresci su nuovi mercati senza assumere — l'AI fa cataloghi, preventivi e risposte ricambi in ogni lingua. Valida: cosa traducono/assumono, volume preventivi.">Scale into new markets without hiring — AI does catalogues, quotes & spare-parts replies in every language. Validate: translation/hiring, quote volume.</td>
@@ -219,6 +225,26 @@
 <section id="details">
   <h2><span class="num">4</span><span class="t" data-it="Pitch + calcolatori ROI dal vivo">Pitches + live ROI calculators</span></h2>
   <p class="sub t" data-it="Fai ogni call in due tempi — raramente ne hai due. PRIMA la discovery: usa i punti «da validare» della tabella sopra, ascolta, prendi appunti, non vendere. POI cambia marcia — «Posso dirti come lo risolverei?» — e usa l'aggancio qui sotto, mettendo i loro numeri veri nel calcolatore dal vivo e chiedendo quanto pagherebbero. (Aggancio in inglese; passa a IT per lo script. Il tuo prezzo è sempre il 10% del guadagno.)">Run each call in two halves — you rarely get two. FIRST, discovery: ask the "Validate" points from the table above, listen, take notes, don't sell. THEN pivot — "Posso dirti come lo risolverei?" — and deliver the hook below, dropping their real numbers into the live calculator and asking what they'd pay. (Hooks in English; switch to IT for the script. Your price is always 10% of the gain.)</p>
+
+  <!-- EUROQUALITY LAB -->
+  <div class="card detail-card" id="d-lab">
+    <div class="dh"><h3 style="margin:0;">EuroQuality Lab</h3><span class="pill p-warm">WARM</span></div>
+    <div class="hook t" data-it="«Intorno a ogni analisi c'è molto lavoro manuale: trascrivere i dati dagli strumenti, compilare il referto e gestire la modulistica (accettazione, soddisfazione, privacy, reclami). Automatizzo tutto questo: i dati passano dallo strumento al rapporto da soli, con un controllo dei valori anomali prima della firma, e la modulistica si raccoglie in automatico. Refertazione più veloce, più campioni con lo stesso personale, referti in inglese per i clienti esteri.»">"There's a lot of manual work around every analysis: transcribing instrument data, compiling the report, and handling the paperwork (intake, satisfaction, privacy, complaints). I automate all of it — data flows from instrument into the report by itself with an abnormal-value check before sign-off, and the forms collect themselves. Faster reporting, more samples with the same staff, English reports for export clients."</div>
+    <div class="lbl t" data-it="Da validare nell'incontro">Validate in the meeting</div>
+    <p class="t" data-it="Quanti rapporti di prova al giorno? Quanto tempo per trascrivere i dati, compilare il referto e gestire la modulistica (accettazione, soddisfazione, privacy, reclami)? Quanto ci mettete a fare un preventivo? Quanti clienti esteri vogliono il referto in inglese? Chi risponde a «a che punto è la mia analisi?»">How many test reports a day? How long to transcribe data, compile the report and handle the paperwork (intake, satisfaction, privacy, complaints)? How long to produce a quote? How many export clients want English reports? Who answers "where's my analysis at?"</p>
+    <div class="roi" id="roi-lab"><div class="roi-title">EuroQuality Lab — capacity calculator</div>
+      <div class="roi-inputs">
+        <label><span class="t" data-it="Rapporti di prova al giorno">Test reports per day</span><input type="number" data-k="reports" value="40"></label>
+        <label><span class="t" data-it="Minuti manuali per pratica (dati, referto, moduli, invio)">Manual minutes per case (data, report, forms, sending)</span><input type="number" data-k="mins" value="12"></label>
+        <label><span class="t" data-it="Costo orario tecnico (€)">Technician hourly cost (€)</span><input type="number" data-k="rate" value="25"></label>
+      </div>
+      <div class="roi-out">
+        <div><span class="big g" data-out="gain">€0</span><small class="t" data-it="valore capacità/anno">capacity value/yr</small></div>
+        <div><span class="big b" data-out="fee">€0</span><small class="t" data-it="tuo compenso/anno (10%)">your fee/yr (10%)</small></div>
+        <div><span class="big i" data-out="keep">€0</span><small class="t" data-it="loro tengono (90%)">they keep (90%)</small></div>
+      </div></div>
+    <p class="meta t" data-it="Prezzo: 10% del valore (~€6k/anno) + ~€3k setup. La refertazione veloce fa anche vincere i clienti che hanno fretta (es. produttori alimentari).">Price: 10% of value (~€6k/yr) + ~€3k setup. Faster reporting also wins time-sensitive clients (e.g. food producers).</p>
+  </div>
 
   <!-- KLIMA -->
   <div class="card detail-card" id="d-klima">
@@ -506,6 +532,7 @@
   wire('roi-sma',   v => { const rev=v.quoted*(v.lift/100), g=rev*(v.margin/100); return { rev:fmt(rev), gain:fmt(g), fee:fmt(g*0.10) }; });
   wire('roi-comm',  v => { const g=v.clients*v.fee; return { gain:fmt(g), yourfee:fmt(g*0.10), keep:fmt(g*0.90) }; });
   wire('roi-pug',   v => { const g=v.enq*(v.conv/100)*v.val; return { gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) }; });
+  wire('roi-lab',   v => { const g=v.reports*(v.mins/60)*250*v.rate; return { gain:fmt(g), fee:fmt(g*0.10), keep:fmt(g*0.90) }; });
 </script>
 </body>
 </html>
