@@ -45,6 +45,13 @@
   .qlist li.core{background:#F5F3FF;border-left:3px solid var(--indigo);border-radius:0 8px 8px 0;padding:9px 10px;font-weight:600;}
   .qlist li.core::before{content:"★ " counter(qn) ". ";color:var(--indigo);}
   .corelegend{font-size:12.5px;color:var(--indigo2);font-weight:700;margin:6px 0 2px;}
+  .subtabs{display:flex;gap:6px;margin:8px 0 20px;}
+  .subbtn{font-size:12.5px;font-weight:700;color:var(--indigo2);background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 14px;cursor:pointer;}
+  .subbtn.on{background:var(--indigo);color:#fff;border-color:var(--indigo);}
+  .subpanel{display:none;} .subpanel.show{display:block;}
+  td.q{font-weight:700;color:var(--slate);width:40%;}
+  .pri{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;border-radius:999px;padding:2px 9px;margin-bottom:8px;}
+  .pri.p1{background:#DCFCE7;color:#166534;} .pri.p2{background:#EDE9FE;color:#5B21B6;} .pri.p3{background:#FEF3C7;color:#92400E;} .pri.park{background:#F1F5F9;color:#64748B;}
 </style>
 </head>
 <body>
@@ -254,69 +261,86 @@
 <section id="t-bon" class="panel">
   <h2>Masseria Bonelli</h2>
   <p class="sub t" data-en="Weddings & events venue, Noci (16th-c. masseria, exclusive use). Growing toward a resort (34 rooms + 500 m² spa).">Location matrimoni ed eventi, Noci (masseria del '500, uso esclusivo). In crescita verso un resort (34 camere + spa 500 m²).</p>
-  <div class="card warm">
-    <h3 class="t" data-en="Answers — 1st call (24 Jun)">Risposte — 1° incontro (24 giu)</h3>
-    <p class="t" data-en="Weddings; 170–180 events/yr; avg €170/guest. They work only 6–7 months (closed Jan–Mar; quiet Apr, Oct, Dec); ~10 permanent staff, the rest seasonal. Replies are immediate (the sister), max 1 day — speed is NOT the problem. ~Half of contacts convert (≈600→300, 1–2 months); the rest is lost to price/date/details/vibe and those leads aren't worked. Channels: Google, Instagram, matrimonio.com, Facebook, email — 80% word-of-mouth; external marketing agency they're lukewarm about. International today ≈ 0 (foreigners want 2–3 consecutive days, no availability for ~2 years). Resort coming: 34 rooms + 500 m² spa, works in ~1 yr, done in ~3 — to de-seasonalise (winter spa) and enable stays/foreign clients. They know nothing about AI and do little on conversion/scaling; want to earn more and de-seasonalise, but cost-sensitive.">Matrimoni; 170–180 eventi/anno; spesa media €170/persona. Lavorano solo 6–7 mesi (chiusi gen–mar; scarichi apr, ott, dic); ~10 fissi, il resto stagionali. Risposta immediata (la sorella), max 1 giorno — la velocità NON è il problema. ~Metà dei contatti converte (≈600→300, 1–2 mesi); il resto si perde per prezzo/data/dettagli/vibe e quei contatti non vengono lavorati. Canali: Google, Instagram, matrimonio.com, Facebook, email — 80% passaparola; agenzia marketing esterna che non li convince. Internazionale oggi ≈ 0 (gli stranieri vogliono 2–3 giorni di fila, nessuna disponibilità per ~2 anni). Resort in arrivo: 34 camere + spa 500 m², lavori tra ~1 anno, finiti tra ~3 — per destagionalizzare (spa d'inverno) e abilitare soggiorni/clienti esteri. Di AI non sanno nulla e fanno poco su conversione/scaling; vogliono guadagnare di più e destagionalizzare, ma attenti al costo.</p>
-    <p class="t" data-en="Problem read: SEASONALITY. The lever is proactively filling the empty months + converting more of the contacts they already get + building the international/resort pipeline — NOT replying faster (already fast)."><b>Lettura del problema:</b> STAGIONALITÀ. La leva è riempire i mesi vuoti in modo proattivo + convertire di più dei contatti che già ricevono + costruire la pipeline internazionale/resort — NON rispondere più in fretta (già veloci).</p>
+  <div class="subtabs">
+    <button class="subbtn on t" onclick="showSub('s-cd',this)" data-en="Customer development">Customer development</button>
+    <button class="subbtn t" onclick="showSub('s-plan',this)" data-en="The plan">Il piano</button>
   </div>
-  <div class="lbl t" data-en="The meeting, in 4 steps">L'incontro, in 4 momenti</div>
-  <div class="card">
-    <div class="step"><div class="n">1</div><div class="t" data-en="Build rapport. Who introduced you, the area, something genuine.">Crea sintonia. Chi vi ha presentati, la zona, qualcosa di genuino.</div></div>
-    <div class="step"><div class="n">2</div><div class="t" data-en="Introduce yourself in one line, then ask to run a few questions:">Presentati in una frase, poi chiedi di fare qualche domanda:</div></div>
-    <div class="hook t" data-en="&quot;I'm Ilaria, I'm based in London and I build AI solutions that save companies time and help them grow. Before explaining how, I'd love to ask you a few questions about how you work.&quot;">"Sono Ilaria, lavoro a Londra e costruisco soluzioni di intelligenza artificiale che fanno risparmiare tempo e crescere le aziende. Prima di spiegarti come, mi piacerebbe farti qualche domanda su come lavorate."</div>
-    <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below).">Customer development — trova il problema più grande (domande sotto).</div></div>
-    <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: show the tailored page.">"Wow": mostra la pagina su misura.</div></div>
+
+  <!-- ===== CUSTOMER DEVELOPMENT ===== -->
+  <div id="s-cd" class="subpanel show">
+    <div class="card warm">
+      <h3 class="t" data-en="In short">In sintesi</h3>
+      <p class="t" data-en="Bonelli isn't short on interest — it's short on interest in the empty months, and from people word-of-mouth can't reach. Full 6–7 months, dark the rest. Replies are already fast (the sister, within a day), so speed isn't the issue. The lever is seasonality: re-activate past couples, fill the quiet months with non-wedding events, capture leads from every channel, and prepare international ahead of the resort.">Bonelli non manca di interesse — manca di interesse nei mesi vuoti, e da persone che il passaparola non raggiunge. Pieni 6–7 mesi, fermi il resto. Le risposte sono già rapide (la sorella, entro un giorno), quindi la velocità non è il problema. La leva è la stagionalità: riattivare le coppie passate, riempire i mesi scarichi con eventi non-matrimonio, catturare i contatti da ogni canale e preparare l'internazionale in vista del resort.</p>
+    </div>
+    <div class="lbl t" data-en="What we learned (1st call, 24 Jun)">Cosa abbiamo capito (1° incontro, 24 giu)</div>
+    <table>
+      <tr><th class="t" data-en="Question">Domanda</th><th class="t" data-en="Answer">Risposta</th></tr>
+      <tr><td class="q t" data-en="What events do you run?">Che eventi fate?</td><td class="t" data-en="Weddings only (no communions/corporate today)">Solo matrimoni (no comunioni/aziendali oggi)</td></tr>
+      <tr><td class="q t" data-en="How many a year?">Quanti l'anno?</td><td class="t" data-en="170–180">170–180</td></tr>
+      <tr><td class="q t" data-en="How many months do you work?">Quanti mesi lavorate?</td><td class="t" data-en="6–7 — closed Jan/Feb/Mar; quiet Apr, Oct, Dec">6–7 — chiusi gen/feb/mar; scarichi apr, ott, dic</td></tr>
+      <tr><td class="q t" data-en="Who handles enquiries / how fast?">Chi gestisce le richieste / in quanto tempo?</td><td class="t" data-en="The sister, immediate reply, max 1 day">La sorella, risposta immediata, max 1 giorno</td></tr>
+      <tr><td class="q t" data-en="Conversion?">Conversione?</td><td class="t" data-en="~half (≈600 contacts → ~300), 1–2 month decision">~metà (≈600 contatti → ~300), decisione 1–2 mesi</td></tr>
+      <tr><td class="q t" data-en="Why don't they convert?">Perché non convertono?</td><td class="t" data-en="Price, date taken, vibe/fit — real reasons">Prezzo, data occupata, vibe/fit — motivi reali</td></tr>
+      <tr><td class="q t" data-en="Are the non-converters worked?">I non-convertiti vengono lavorati?</td><td class="t" data-en="No">No</td></tr>
+      <tr><td class="q t" data-en="Channels?">Canali?</td><td class="t" data-en="Google, Instagram, matrimonio.com, Facebook, email — 80% word-of-mouth">Google, Instagram, matrimonio.com, Facebook, email — 80% passaparola</td></tr>
+      <tr><td class="q t" data-en="International?">Internazionale?</td><td class="t" data-en="≈0 — foreigners want 2–3 days + to sleep on site; no hotel yet">≈0 — stranieri vogliono 2–3 giorni + dormire sul posto; manca l'hotel</td></tr>
+      <tr><td class="q t" data-en="Average spend?">Spesa media?</td><td class="t" data-en="~€170/guest (~€18–22k per event)">~€170/ospite (~€18–22k a evento)</td></tr>
+      <tr><td class="q t" data-en="Marketing?">Marketing?</td><td class="t" data-en="External agency, unconvinced by it">Agenzia esterna, non li convince</td></tr>
+      <tr><td class="q t" data-en="Resort?">Resort?</td><td class="t" data-en="34 rooms + 500 m² spa; works in ~1 yr, done in ~3">34 camere + spa 500 m²; lavori tra ~1 anno, finito tra ~3</td></tr>
+    </table>
+    <div class="lbl t" data-en="Problem read">Lettura del problema</div>
+    <div class="card">
+      <p class="t" data-en="SEASONALITY. The lever is proactively filling the empty months + reaching audiences word-of-mouth doesn't — NOT replying faster (already fast)."><b>STAGIONALITÀ.</b> La leva è riempire i mesi vuoti in modo proattivo + raggiungere un pubblico che il passaparola non porta — NON rispondere più in fretta (già veloci).</p>
+      <p class="meta t" data-en="Honest scoping: (1) converting today's leads is parked — they're lost to price, a taken date or fit, which are real decisions, not leaks; (2) international is a connection problem (no hotel), so it's partnerships, not automation, for now.">Onestà sullo scope: (1) convertire i contatti di oggi è parcheggiato — si perdono per prezzo, data occupata o feeling, che sono decisioni reali, non falle; (2) l'internazionale è un problema di connessione (manca l'hotel), quindi per ora è partnership, non automazione.</p>
+    </div>
   </div>
-  <p class="corelegend t" data-en="★ = must-ask in a 30-min meeting; the rest only if there's time.">★ = da chiedere assolutamente (incontro da 30 min); il resto solo se c'è tempo.</p>
-  <div class="lbl t" data-en="Questions — business & goal">Domande — attività e obiettivo</div>
-  <ul class="qlist">
-    <li class="core t" data-en="How is the masseria structured today? What kinds of events, and in what proportion (weddings, communions, corporate)?">Com'è strutturata oggi la masseria? Che tipi di eventi, e in che proporzione (matrimoni, comunioni, aziendali)?</li>
-    <li class="core t" data-en="In a season, how many events more or less? Almost always full, or are there dates/periods that stay free?">In una stagione, quanti eventi più o meno? Siete quasi sempre al completo o ci sono date/periodi liberi?</li>
-    <li class="core t" data-en="Where do you want to get to in 1–2 years? Planning to expand or build something new beyond the masseria?">Dove volete arrivare nei prossimi 1–2 anni? Avete in mente di espandervi o creare qualcosa di nuovo oltre alla masseria?</li>
-    <li class="t" data-en="Italian clients only or also foreign? How much does abroad weigh — and how much would you like it to?">Solo clienti italiani o anche dall'estero? Quanto pesa l'estero — e quanto vorreste che pesasse?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
-  <ul class="qlist">
-    <li class="core t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up: and day-to-day, what wastes the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up: e nel quotidiano, cosa vi fa perdere più tempo?)</li>
-    <li class="t" data-en="If you could fix one single thing in how you run it, what would it be?">Se poteste sistemare una sola cosa nella gestione, quale sarebbe?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — enquiries (concrete)">Domande — le richieste (fatti concreti)</div>
-  <ul class="qlist">
-    <li class="core t" data-en="How do enquiries arrive — website, Instagram, Facebook, email? Do you use WhatsApp, or would you want to? Roughly how many a month?">Come arrivano le richieste — sito, Instagram, Facebook, email? Usate WhatsApp, o vorreste? Più o meno quante al mese?</li>
-    <li class="core t" data-en="Who replies, and how long before a reply, especially at weekends or in peak season?">Chi risponde, e quanto tempo passa prima di rispondere, soprattutto nei weekend o in alta stagione?</li>
-    <li class="t" data-en="In the last busy week: how many enquiries did you follow and how many fell behind?">Nell'ultima settimana piena: quante richieste avete seguito e quante sono rimaste indietro?</li>
-    <li class="core t" data-en="Of all enquiries, roughly how many become a site visit, and how many a confirmed event? Where are they lost?">Di tutte le richieste, più o meno quante diventano un sopralluogo, e quante un evento confermato? Dove si perdono?</li>
-    <li class="t" data-en="Have you ever lost a couple because you replied late? Tell me about the last time.">Vi è mai capitato di perdere una coppia perché avete risposto tardi? Raccontami l'ultima volta.</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — value, dates & channels">Domande — valore, date e canali</div>
-  <ul class="qlist">
-    <li class="core t" data-en="What's the average spend per event? Which extras do you offer (overnight stay, on-site ceremony, décor, open bar) and how many couples take them?">Qual è la spesa media a evento? Quali extra proponete (pernotto sposi, cerimonia in loco, allestimenti, open bar) e quanti li prendono?</li>
-    <li class="t" data-en="Which dates stay empty? What's the difference between high and low season, weekend and weekday?">Quali date restano libere? Che differenza c'è tra alta e bassa stagione, weekend e infrasettimanale?</li>
-    <li class="t" data-en="Where do most couples come from (Instagram, site, portals, word of mouth)? Do you pay commissions or ads to portals — how much?">Da dove arrivano di più le coppie (Instagram, sito, portali, passaparola)? Pagate commissioni o pubblicità ai portali — quanto?</li>
-    <li class="t" data-en="Do you know how many enquiries arrive a month, how many close, and from which channels?">Sapete quante richieste arrivano al mese, quante chiudono e da quali canali?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — the work behind a booked event">Domande — il lavoro dietro un evento confermato</div>
-  <ul class="qlist">
-    <li class="t" data-en="Once confirmed, how much work is behind it — couple, suppliers, payments, reminders? Who does it?">Una volta confermato, quanto lavoro c'è dietro — coppia, fornitori, pagamenti, promemoria? Chi lo fa?</li>
-    <li class="t" data-en="How many of you manage all this? What stops you handling more events with the people you have?">In quanti gestite tutto questo? Cosa vi impedisce di gestire più eventi con le persone che avete?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
-  <ul class="qlist">
-    <li class="core t" data-en="Have you tried to fix this? With what tools or people? How did it go? What does it cost you today, and who decides?">Avete già provato a sistemarlo? Con quali strumenti o persone? Com'è andata? Quanto vi costa oggi, e chi decide?</li>
-  </ul>
-  <div class="lbl t" data-en="Pitch & how to close">Pitch e come chiudere</div>
-  <div class="card">
-    <p class="t" data-en="Quick ROI: extra events recovered × average event value → extra revenue.">ROI rapido: eventi recuperati × valore medio evento → fatturato in più.</p>
-    <p class="meta t" data-en="It's a call — don't show the page. Close like this:">È una call — non mostrare la pagina. Chiudi così:</p>
-    <div class="hook t" data-en="&quot;So, if I've understood right, the thing that weighs on you most is [the problem they named] — and you'd want to change that, right? I'll put together a document on how I think I could solve it and the value it would bring. You look at it whenever, and if you'd like, I do a small free audit: I come in for a few hours, look at how you spend your time, and show you where AI can really help. To send you the document — email or WhatsApp?&quot;">"Quindi, se ho capito bene, la cosa che vi pesa di più è [il problema che hanno detto] — e vorreste cambiarla, giusto? Vi preparo un documento con come penso di poterla risolvere e il valore che porterebbe. Lo guardate con calma e, se vi va, faccio un piccolo audit gratuito: qualche chiamata con voi e il team, mi mostrate come lavorate (schermate, piattaforme) e vi dico dove l'AI può aiutarvi davvero. Per mandarvi il documento, meglio email o WhatsApp?"</div>
-    <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="The page to send afterwards →">La pagina da mandare dopo →</a>
+
+  <!-- ===== THE PLAN ===== -->
+  <div id="s-plan" class="subpanel">
+    <div class="card">
+      <span class="pri p1 t" data-en="PRIORITY 1">PRIORITÀ 1</span>
+      <h3 class="t" data-en="Re-activate past couples (the backlog)">Riattivare le coppie passate (il backlog)</h3>
+      <p class="t" data-en="Everyone who married at Bonelli is automatically contacted with a reason to come back — a 5-year anniversary, a milestone birthday, a vow renewal — with a tailored package. They own this data already; no ad spend; it brings warm bookings straight into the empty months.">Chiunque si è sposato a Bonelli viene ricontattato automaticamente con un motivo per tornare — un anniversario di 5 anni, un compleanno importante, un rinnovo delle promesse — con un pacchetto su misura. Hanno già questi dati; nessuna spesa pubblicitaria; porta prenotazioni calde dritte nei mesi vuoti.</p>
+      <p class="meta t" data-en="Automation: from the guest list, automatic personalised messages on the right dates (anniversary, birthday) with the offer — approved by them. The easiest, fastest first win."><b>Automazione:</b> dalla lista ospiti, messaggi personalizzati automatici nelle date giuste (anniversario, compleanno) con l'offerta — approvati da loro. La prima vittoria più facile e veloce.</p>
+    </div>
+    <div class="card">
+      <span class="pri p2 t" data-en="PRIORITY 2">PRIORITÀ 2</span>
+      <h3 class="t" data-en="Fill the empty months with non-wedding events">Riempire i mesi vuoti con eventi non-matrimonio</h3>
+      <p class="t" data-en="Demand word-of-mouth never brings: corporate weekdays, milestone birthdays & anniversaries, premium winter-themed events, photoshoots, workshops. It needs its OWN channel — not the wedding brand.">Domanda che il passaparola non porta: aziendali infrasettimanali, compleanni e anniversari importanti, eventi a tema invernali premium, shooting, workshop. Serve un canale TUTTO suo — non il brand dei matrimoni.</p>
+      <p class="meta t" data-en="Automation: dedicated landing pages per segment + targeted geo/language ads + auto-capture of every enquiry. Worth: each filled off-season date ≈ €18k."><b>Automazione:</b> landing page dedicate per segmento + campagne mirate per zona/lingua + cattura automatica di ogni richiesta. <b>Vale:</b> ogni data fuori stagione riempita ≈ €18k.</p>
+    </div>
+    <div class="card">
+      <span class="pri p2 t" data-en="PRIORITY 3">PRIORITÀ 3</span>
+      <h3 class="t" data-en="Capture & organise leads from every channel">Catturare e organizzare i contatti da ogni canale</h3>
+      <p class="t" data-en="A new Instagram follower → automatic welcome DM + 'message us'; Facebook, Google, portals and email all funnel into ONE place; nothing sits unseen; each lead auto-tagged by source.">Un nuovo follower su Instagram → DM di benvenuto automatico + 'scrivici'; Facebook, Google, portali ed email confluiscono in UN unico posto; niente resta invisibile; ogni contatto etichettato in automatico per fonte.</p>
+      <p class="meta t" data-en="Automation: capture and organisation across channels, so the team always knows who reached out and from where — and no lead is ever missed.">Automazione: cattura e organizzazione su tutti i canali, così il team sa sempre chi ha scritto e da dove — e nessun contatto va perso.</p>
+    </div>
+    <div class="card">
+      <span class="pri p3 t" data-en="LATER">PIÙ AVANTI</span>
+      <h3 class="t" data-en="International, via connections">Internazionale, via connessioni</h3>
+      <p class="t" data-en="Foreigners want everything in one place. Until the resort opens, partner with nearby hotels/B&Bs + transfers for a 'stay & celebrate' package; capture a waitlist now so it's ready on day one.">Gli stranieri vogliono tutto in un posto. Finché non apre il resort, partnership con hotel/B&B vicini + transfer per un pacchetto 'soggiorno + evento'; raccogliere una lista d'attesa ora, così è pronta dal primo giorno.</p>
+      <p class="meta t" data-en="Honest: this is business development (partnerships), not automation — though capturing and following up the waitlist can be automated."><b>Onestà:</b> questo è sviluppo commerciale (partnership), non automazione — anche se la cattura e il follow-up della lista d'attesa si possono automatizzare.</p>
+    </div>
+    <div class="card">
+      <span class="pri park t" data-en="PARKED">PARCHEGGIATO</span>
+      <h3 class="t" data-en="Converting today's leads">Convertire i contatti di oggi</h3>
+      <p class="meta t" data-en="Lost to price, taken dates and fit — real decisions, not something automation fixes. Revisit later.">Si perdono per prezzo, date occupate e feeling — decisioni reali, non qualcosa che l'automazione risolve. Da riprendere più avanti.</p>
+    </div>
+    <div class="lbl t" data-en="Next step">Prossimo passo</div>
+    <div class="card">
+      <p class="t" data-en="Send the client document; if it lands, the free audit (calls + screenshots of how they work), then I build Priority 1 first.">Mando il documento al cliente; se convince, l'audit gratuito (chiamate + screenshot di come lavorano), poi costruisco prima la Priorità 1.</p>
+      <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="The client page →">La pagina per il cliente →</a>
+    </div>
+    <p class="meta" style="margin-top:14px;border-top:1px dashed var(--line);padding-top:10px;"><b>Nota interna (non nel doc cliente):</b> ingresso con audit gratuito → pagata come 15% del valore creato (loro tengono l'85%). Il prezzo non va nel documento condiviso.</p>
   </div>
+
 </section>
 
 </div>
 
 <script>
   function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+  function showSub(id,btn){const p=btn.closest('.panel');p.querySelectorAll('.subpanel').forEach(s=>s.classList.remove('show'));p.querySelector('#'+id).classList.add('show');p.querySelectorAll('.subbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
   const bIt=document.getElementById('b-it'),bEn=document.getElementById('b-en');
   function setLang(l){
     document.querySelectorAll('.t').forEach(el=>{ if(el.dataset.it===undefined) el.dataset.it=el.textContent; el.textContent=(l==='en'?(el.dataset.en||el.dataset.it):el.dataset.it); });
