@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Masseria Bonelli — Più eventi prenotati</title>
+<style>
+  :root{--ink:#2E2922;--muted:#7C7163;--line:#EAE3D6;--accent:#B5853A;--accent-d:#4A3B27;--accent-l:#D8B06A;--cream:#F6F0E6;--green:#6E7B53;--bg:#FAF7F1;--card:#fff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;color:var(--accent-d);}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(181,133,58,.18);}
+  .navlinks{display:flex;gap:22px;font-size:14px;font-weight:600;color:var(--muted);margin-left:auto;}
+  .navlinks a{text-decoration:none;} .navlinks a:hover{color:var(--accent);}
+  @media(max-width:760px){.navlinks{display:none;}}
+  .langtoggle{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;}
+  .langtoggle button{background:#fff;color:var(--muted);border:none;padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;}
+  .langtoggle button.on{background:var(--accent-d);color:#fff;}
+  .btn{display:inline-block;background:var(--accent-d);color:#fff;padding:14px 24px;border-radius:11px;font-size:16px;font-weight:700;text-decoration:none;transition:transform .2s;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);}
+  .hero{position:relative;overflow:hidden;background:radial-gradient(1100px 520px at 82% -12%,#D8B06A 0%,rgba(216,176,106,0) 55%),linear-gradient(135deg,#3B2F1E 0%,#9A6F33 100%);color:#fff;}
+  .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none;animation:drift 36s linear infinite;}
+  .hero .wrap{position:relative;z-index:1;padding:62px 24px 58px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{font-size:clamp(31px,5.2vw,48px);line-height:1.07;font-weight:800;letter-spacing:-.02em;max-width:17ch;animation:fadeup .8s ease both;}
+  .hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#F0E6D4;max-width:54ch;margin-top:18px;animation:fadeup .8s ease .12s both;}
+  .cta-row{margin-top:26px;animation:fadeup .8s ease .24s both;}
+  .stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;animation:fadeup .8s ease .36s both;}
+  .stat{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 18px;min-width:140px;flex:1;}
+  .stat .n{font-size:26px;font-weight:800;color:#fff;}
+  .stat .l{font-size:12.5px;color:#EBDDC4;margin-top:2px;}
+  .hero-visual{position:relative;height:380px;}
+  .hero-visual .orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#F3D9A6;box-shadow:0 0 60px rgba(216,176,106,.45);animation:bob 5s ease-in-out infinite;}
+  .hero-visual .orb svg{width:40px;height:40px;}
+  .hero-visual .chip{position:absolute;display:flex;align-items:center;gap:7px;background:#fff;color:var(--accent-d);border-radius:11px;padding:9px 13px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);animation:bob 6s ease-in-out infinite;}
+  .hero-visual .chip svg{width:15px;height:15px;color:var(--accent);}
+  .hero-visual .c1{top:4%;left:12%;animation-duration:5.5s;}.hero-visual .c2{top:0;right:4%;animation-duration:6.5s;animation-delay:.6s;}
+  .hero-visual .c3{top:42%;left:-2%;animation-duration:6s;animation-delay:.3s;}.hero-visual .c4{top:48%;right:-3%;animation-duration:5.2s;animation-delay:.9s;}
+  .hero-visual .c5{bottom:4%;left:8%;animation-duration:6.8s;animation-delay:.2s;}.hero-visual .c6{bottom:0;right:10%;animation-duration:5.8s;animation-delay:1.1s;}
+  section{padding:62px 0;}
+  .kicker{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--accent);}
+  h2{font-size:clamp(25px,3.6vw,34px);font-weight:800;letter-spacing:-.02em;margin-top:8px;color:var(--accent-d);}
+  .lead2{color:var(--muted);max-width:62ch;margin-top:10px;font-size:16px;}
+  .grid{display:grid;gap:16px;margin-top:32px;}
+  .g2{grid-template-columns:repeat(2,1fr);}.g4{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:860px){.g4{grid-template-columns:repeat(2,1fr);}}@media(max-width:560px){.g2,.g4{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:transform .25s,box-shadow .25s;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -18px rgba(74,59,39,.3);}
+  .ico{width:46px;height:46px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--accent);transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+  .ico svg{width:25px;height:25px;}.card:hover .ico{transform:scale(1.14) rotate(-5deg);}
+  .card h3{font-size:17px;font-weight:700;color:var(--accent-d);}.card p{font-size:15px;color:var(--muted);margin-top:6px;}
+  .step-n{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:12px;}
+  .calc{background:linear-gradient(135deg,#3B2F1E 0%,#8A6330 100%);border-radius:24px;padding:36px;color:#fff;position:relative;overflow:hidden;}
+  .calc::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px;opacity:.5;}
+  .calc .inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr;gap:38px;}
+  @media(max-width:760px){.calc .inner{grid-template-columns:1fr;gap:26px;}}
+  .slider{margin-bottom:22px;}
+  .slider .top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;font-weight:600;color:#EBDDC4;gap:10px;}
+  .slider .top b{font-size:18px;color:#fff;font-weight:800;white-space:nowrap;}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:rgba(255,255,255,.22);margin-top:12px;outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--accent-l);box-shadow:0 2px 6px rgba(0,0,0,.3);cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--accent-l);cursor:pointer;}
+  .res-grid{display:flex;flex-direction:column;justify-content:center;gap:16px;}
+  .res-main .big{font-size:clamp(40px,7vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1;color:#F3D9A6;}
+  .res-main .cap{color:#EBDDC4;font-size:15px;margin-top:4px;}
+  .res-row{display:flex;gap:24px;}.res-row .n{font-size:26px;font-weight:800;}.res-row .l{font-size:12.5px;color:#EBDDC4;}
+  .proof{background:var(--accent-d);color:#fff;border-radius:20px;padding:30px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-around;}
+  .proof div{text-align:center;}.proof .n{font-size:32px;font-weight:800;color:#F3D9A6;}.proof .l{font-size:13px;color:#EBDDC4;max-width:24ch;margin:4px auto 0;}
+  details.faq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;}
+  details.faq summary{cursor:pointer;font-weight:700;color:var(--accent-d);list-style:none;font-size:16px;}
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{content:"+";float:right;color:var(--accent);font-weight:800;}details.faq[open] summary::after{content:"–";}
+  details.faq p{color:var(--muted);margin-top:10px;font-size:15px;}
+  footer{padding:34px 0 64px;color:var(--muted);font-size:13px;text-align:center;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}.reveal.in{opacity:1;transform:none;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-13px);}}
+  @keyframes fadeup{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+  @keyframes drift{from{background-position:0 0;}to{background-position:300px 300px;}}
+  nav .navlinks a{position:relative;}nav .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--accent);transition:width .25s;}nav .navlinks a:hover::after{width:100%;}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><span class="dot"></span> Masseria&nbsp;Bonelli</div>
+  <div class="navlinks">
+    <a href="#problema" class="t" data-en="The problem">Il problema</a>
+    <a href="#soluzione" class="t" data-en="The solution">La soluzione</a>
+    <a href="#valore" class="t" data-en="What it's worth">Quanto vale</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="langtoggle"><button id="b-it" class="on" onclick="setLang('it')">IT</button><button id="b-en" onclick="setLang('en')">EN</button></div>
+</div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div class="hero-text">
+    <h1 class="t" data-en="Turn more enquiries into booked events — with the same team.">Trasformate più richieste in eventi prenotati, con lo stesso team.</h1>
+    <p class="lead t" data-en="As the masseria grows and aims higher, enquiries multiply and arrive from every channel and every country. Answer them all — instantly and in their language — without losing a single couple or guest of value.">Mentre la masseria cresce e punta più in alto, le richieste si moltiplicano e arrivano da ogni canale e da ogni paese. Rispondete a tutte, subito e nella loro lingua, senza perdere nessuna coppia o ospite di valore.</p>
+    <div class="cta-row"><a href="#valore" class="btn ghost t" data-en="See what it's worth for you →">Vedi quanto vale per voi →</a></div>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="78" data-suffix="%">0%</div><div class="l t" data-en="book with whoever replies first">prenota con chi risponde per primo</div></div>
+      <div class="stat"><div class="n" data-text="24/7">24/7</div><div class="l t" data-en="reply to every enquiry">risposta a ogni richiesta</div></div>
+      <div class="stat"><div class="n" data-text="ogni lingua" data-text-en="any language">ogni lingua</div><div class="l t" data-en="for international guests too">anche per gli ospiti internazionali</div></div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="orb"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAC9CAYAAACasWDpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjZCNEVCN0RENENFODExRUE5NDY5RjE5Q0NEOEJGNzk3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjZCNEVCN0RFNENFODExRUE5NDY5RjE5Q0NEOEJGNzk3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NkI0RUI3REI0Q0U4MTFFQTk0NjlGMTlDQ0Q4QkY3OTciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NkI0RUI3REM0Q0U4MTFFQTk0NjlGMTlDQ0Q4QkY3OTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7q/9O+AAAfaklEQVR42uxd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" alt="Masseria Bonelli" style="width:66px;height:auto;"/></div>
+    <span class="chip c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> <span class="t" data-en="Website enquiry">Richiesta dal sito</span></span>
+    <span class="chip c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> WhatsApp</span>
+    <span class="chip c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> <span class="t" data-en="Enquiry in English">Richiesta in inglese</span></span>
+    <span class="chip c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> <span class="t" data-en="Site visit booked">Sopralluogo fissato</span></span>
+    <span class="chip c5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> <span class="t" data-en="Quote sent">Preventivo inviato</span></span>
+    <span class="chip c6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 7"/></svg> <span class="t" data-en="Event confirmed">Evento confermato</span></span>
+  </div>
+</div></header>
+
+<section id="valore"><div class="wrap reveal">
+  <span class="kicker t" data-en="What it's worth for you">Quanto vale per voi</span>
+  <h2 class="t" data-en="Set your numbers, see what changes">Mettete i vostri numeri, vedete cosa cambia</h2>
+  <p class="lead2 t" data-en="Cautious starting numbers — in the meeting we replace them with the real ones from the masseria.">Valori di partenza prudenti: nell'incontro li sostituiamo con quelli reali della masseria.</p>
+  <div class="calc">
+    <div class="inner">
+      <div>
+        <div class="slider"><div class="top"><span class="t" data-en="Extra events you could recover per year">Eventi in più recuperabili in un anno</span><b id="v-ev">6</b></div><input type="range" id="ev" min="1" max="30" value="6"></div>
+        <div class="slider"><div class="top"><span class="t" data-en="Average value of an event (€)">Valore medio di un evento (€)</span><b id="v-val">8.000</b></div><input type="range" id="val" min="3000" max="30000" step="500" value="8000"></div>
+      </div>
+      <div class="res-grid">
+        <div class="res-main"><div class="big" id="gain">€0</div><div class="cap t" data-en="in extra revenue per year — recovered from enquiries you lose today">di fatturato in più all'anno — recuperato da richieste che oggi perdete</div></div>
+        <div class="res-row">
+          <div><div class="n" id="evout">0</div><div class="l t" data-en="extra events / year">eventi in più / anno</div></div>
+          <div><div class="n" id="perev">€0</div><div class="l t" data-en="per event">a evento</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="problema" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap reveal">
+  <span class="kicker t" data-en="The problem today">Il problema oggi</span>
+  <h2 class="t" data-en="Enquiries come from everywhere — and they're easy to lose">Le richieste arrivano da ogni parte — ed è facile perderne</h2>
+  <p class="lead2 t" data-en="Every lost or late-answered enquiry is an event worth thousands that goes to another venue.">Ogni richiesta persa o seguita in ritardo è un evento da migliaia di euro che va a un'altra location.</p>
+  <div class="grid g4">
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H7l-3 3V4Z"/></svg></div><h3 class="t" data-en="Scattered enquiries">Richieste sparse</h3><p class="t" data-en="Website, WhatsApp, Instagram, portals: hard to follow them all.">Sito, WhatsApp, Instagram, portali: difficili da seguire tutte.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3 class="t" data-en="Slow replies">Risposte lente</h3><p class="t" data-en="In peak season and at weekends, couples go to whoever replies first.">In alta stagione e nei weekend, le coppie vanno da chi risponde prima.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3 class="t" data-en="Manual coordination">Coordinamento manuale</h3><p class="t" data-en="Every booked event = months of messages to couple, suppliers, payments.">Ogni evento prenotato = mesi di messaggi a coppia, fornitori, pagamenti.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3 class="t" data-en="&quot;Just looking&quot; enquiries">Richieste "curiose"</h3><p class="t" data-en="Time spent on people just browsing, before reaching the serious couples.">Tempo speso su chi guarda e basta, prima di arrivare alle coppie serie.</p></div>
+  </div>
+</div></section>
+
+<section id="soluzione"><div class="wrap reveal">
+  <span class="kicker t" data-en="The solution">La soluzione</span>
+  <h2 class="t" data-en="No enquiry lost, more events confirmed">Nessuna richiesta persa, più eventi confermati</h2>
+  <div class="grid g2">
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div><h3 class="t" data-en="Instant reply and qualification">Risposta immediata e qualifica</h3><p class="t" data-en="Every enquiry gets an instant 24/7 reply and is checked for a serious couple — date and number of guests.">Ogni richiesta riceve subito una risposta 24/7 e capisce se è una coppia seria, con data e numero di invitati.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><h3 class="t" data-en="Every channel, every language">Ogni canale, ogni lingua</h3><p class="t" data-en="Website, WhatsApp, Instagram, Booking and portals in one place — and replies in English too for international guests.">Sito, WhatsApp, Instagram, Booking e portali in un unico posto — e risposte anche in inglese per gli ospiti internazionali.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></svg></div><h3 class="t" data-en="Automatic follow-up">Follow-up automatico</h3><p class="t" data-en="Reminders and courtesy messages: no couple is left without a reply or goes cold.">Promemoria e messaggi di cortesia: nessuna coppia resta senza risposta o si raffredda.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div><h3 class="t" data-en="Simpler coordination">Coordinamento più semplice</h3><p class="t" data-en="Reminders to couple and suppliers, deadlines and payments: less manual work per event.">Promemoria a coppia e fornitori, scadenze e pagamenti: meno lavoro manuale per ogni evento.</p></div>
+  </div>
+</div></section>
+
+<section id="come" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap reveal">
+  <span class="kicker t" data-en="How we start">Come partiamo</span>
+  <h2 class="t" data-en="A few days, no disruption">Pochi giorni, nessuno stravolgimento</h2>
+  <div class="grid g4">
+    <div class="card"><div class="step-n">1</div><h3 class="t" data-en="A free trial">Una prova gratis</h3><p class="t" data-en="I switch on the automatic reply on one channel as a demo.">Attivo la risposta automatica su un canale come dimostrazione.</p></div>
+    <div class="card"><div class="step-n">2</div><h3 class="t" data-en="We connect the channels">Colleghiamo i canali</h3><p class="t" data-en="Website, WhatsApp, Instagram and portals — the ones you already use.">Sito, WhatsApp, Instagram e portali — quelli che già usate.</p></div>
+    <div class="card"><div class="step-n">3</div><h3 class="t" data-en="Go live">Partenza</h3><p class="t" data-en="Enquiries get an instant reply; you see everything in one place.">Le richieste ricevono risposta subito; voi vedete tutto in un posto.</p></div>
+    <div class="card"><div class="step-n">4</div><h3 class="t" data-en="More events">Più eventi</h3><p class="t" data-en="You convert more enquiries and follow more of them, with the same team.">Convertite più richieste e ne seguite di più, con lo stesso team.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap reveal">
+  <div class="proof">
+    <div><div class="n" data-count="78" data-suffix="%">0%</div><div class="l t" data-en="of couples book with whoever replies first">delle coppie prenota con chi risponde per primo</div></div>
+    <div><div class="n" data-count="5" data-prefix="<" data-suffix=" min">0</div><div class="l t" data-en="to reply, instead of hours or days">per rispondere, invece di ore o giorni</div></div>
+    <div><div class="n" data-text="0">0</div><div class="l t" data-en="enquiries lost between channels">richieste perse tra un canale e l'altro</div></div>
+  </div>
+</div></section>
+
+<section id="contatto" style="background:#fff;border-top:1px solid var(--line);"><div class="wrap reveal" style="text-align:center;">
+  <span class="kicker t" data-en="Next step">Prossimo passo</span>
+  <h2 class="t" data-en="Let's start with a free trial">Partiamo da una prova gratuita</h2>
+  <p class="lead2 t" style="margin:10px auto 0;" data-en="I switch on the automatic reply on one of your channels and show you how it works on real enquiries. You see the result, then you decide — no commitment.">Attivo la risposta automatica su un vostro canale e vi mostro come funziona sulle richieste vere. Vedete il risultato, poi decidete voi — zero impegno.</p>
+  <a class="btn t" style="margin-top:26px;" data-en="Book the trial →" href="#">Prenota la prova →</a>
+</div></section>
+
+<section id="faq"><div class="wrap reveal" style="max-width:780px;">
+  <span class="kicker t" data-en="FAQ">Domande frequenti</span>
+  <h2 class="t" data-en="Quick answers">Le risposte rapide</h2>
+  <div style="margin-top:28px;">
+    <details class="faq"><summary class="t" data-en="Do we have to change how we work today?">Dobbiamo cambiare come lavoriamo oggi?</summary><p class="t" data-en="No. I connect to the channels you already use — website, WhatsApp, Instagram, portals, email. You carry on as before, but no more lost enquiries.">No. Mi collego ai canali che già usate — sito, WhatsApp, Instagram, portali, email. Voi continuate come prima, ma niente più richieste perse.</p></details>
+    <details class="faq"><summary class="t" data-en="Do the replies feel automated and cold?">Le risposte sembrano automatiche e fredde?</summary><p class="t" data-en="No. The tone is yours, warm and tailored. Important enquiries always pass to you — the automation takes the first step, it doesn't replace your relationship with couples.">No. Il tono è il vostro, caloroso e su misura. Le richieste importanti passano sempre a voi — l'automazione fa il primo passo, non sostituisce il vostro rapporto con le coppie.</p></details>
+    <details class="faq"><summary class="t" data-en="Do you replace our staff?">Sostituite il nostro personale?</summary><p class="t" data-en="No. I remove the repetitive work (replying instantly, sorting, reminding) so your team follows more events and focuses on the couples.">No. Tolgo il lavoro ripetitivo (rispondere subito, smistare, ricordare) così il vostro team segue più eventi e si concentra sulle coppie.</p></details>
+    <details class="faq"><summary class="t" data-en="And enquiries from abroad, in other languages?">E le richieste dall'estero, in altre lingue?</summary><p class="t" data-en="Handled automatically: every couple or guest gets a first reply in their own language, so you don't lose valuable international enquiries as the masseria grows.">Gestite in automatico: ogni coppia o ospite riceve una prima risposta nella propria lingua, così non perdete le richieste internazionali di valore mentre fate crescere la masseria.</p></details>
+    <details class="faq"><summary class="t" data-en="How long to get started?">Quanto tempo serve per partire?</summary><p class="t" data-en="A few days: we start with a free trial on a single channel.">Pochi giorni: si parte da una prova gratuita su un solo canale.</p></details>
+  </div>
+</div></section>
+
+<footer><span class="t" data-en="Prepared by Ilaria Basile for Masseria Bonelli · June 2026">Preparato da Ilaria Basile per Masseria Bonelli · giugno 2026</span></footer>
+
+<script>
+  const euro=n=>'€'+Math.round(n).toLocaleString('it-IT');
+  function tween(el,to,fmt,dur=600){const from=el._cur||0,t0=performance.now();
+    function fr(t){const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3),v=from+(to-from)*e;el.textContent=fmt(v);if(p<1)requestAnimationFrame(fr);else el._cur=to;}requestAnimationFrame(fr);}
+  const EV=document.getElementById('ev'),VAL=document.getElementById('val');
+  function calc(){
+    document.getElementById('v-ev').textContent=EV.value;
+    document.getElementById('v-val').textContent=(+VAL.value).toLocaleString('it-IT');
+    const ev=+EV.value,val=+VAL.value,gain=ev*val;
+    tween(document.getElementById('gain'),gain,euro);
+    tween(document.getElementById('evout'),ev,v=>Math.round(v).toLocaleString('it-IT'),450);
+    document.getElementById('perev').textContent=euro(val);
+  }
+  [EV,VAL].forEach(s=>s.addEventListener('input',calc)); calc();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function countUp(scope){scope.querySelectorAll('.n[data-count]').forEach(el=>{const t=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';tween(el,t,v=>pre+Math.round(v)+suf,900);});}
+  window.addEventListener('load',()=>countUp(document.querySelector('.hero')));
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}}),{threshold:.4});
+  const pb=document.querySelector('.proof'); if(pb) cio.observe(pb);
+  // language toggle (default Italian)
+  const bIt=document.getElementById('b-it'),bEn=document.getElementById('b-en');
+  function setLang(l){
+    document.querySelectorAll('.t').forEach(el=>{ if(el.dataset.it===undefined) el.dataset.it=el.textContent; el.textContent=(l==='en'?(el.dataset.en||el.dataset.it):el.dataset.it); });
+    document.querySelectorAll('[data-text]').forEach(el=>{ if(el.dataset.textIt===undefined) el.dataset.textIt=el.dataset.text; });
+    document.documentElement.lang=l; bIt.classList.toggle('on',l==='it'); bEn.classList.toggle('on',l==='en');
+  }
+  document.querySelectorAll('.t').forEach(el=>{ el.dataset.it=el.textContent; });
+</script>
+</body>
+</html>
