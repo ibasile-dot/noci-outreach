@@ -129,6 +129,7 @@
   <div class="calc">
     <div class="inner">
       <div>
+        <div class="slider"><div class="top"><span class="t" data-en="Lost or late enquiries per month">Richieste perse o in ritardo al mese</span><b id="v-lost">15</b></div><input type="range" id="lost" min="1" max="60" value="15"></div>
         <div class="slider"><div class="top"><span class="t" data-en="Extra events you could recover per year">Eventi in più recuperabili in un anno</span><b id="v-ev">6</b></div><input type="range" id="ev" min="1" max="30" value="6"></div>
         <div class="slider"><div class="top"><span class="t" data-en="Average value of an event (€)">Valore medio di un evento (€)</span><b id="v-val">8.000</b></div><input type="range" id="val" min="3000" max="30000" step="500" value="8000"></div>
       </div>
@@ -136,6 +137,7 @@
         <div class="res-main"><div class="big" id="gain">€0</div><div class="cap t" data-en="in extra revenue per year — recovered from enquiries you lose today">di fatturato in più all'anno — recuperato da richieste che oggi perdete</div></div>
         <div class="res-row">
           <div><div class="n" id="evout">0</div><div class="l t" data-en="extra events / year">eventi in più / anno</div></div>
+          <div><div class="n" id="lostyr">0</div><div class="l t" data-en="enquiries recovered / year">richieste recuperate / anno</div></div>
           <div><div class="n" id="permese">€0</div><div class="l t" data-en="≈ per month">≈ al mese</div></div>
         </div>
       </div>
@@ -210,16 +212,18 @@
   const euro=n=>'€'+Math.round(n).toLocaleString('it-IT');
   function tween(el,to,fmt,dur=600){const from=el._cur||0,t0=performance.now();
     function fr(t){const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3),v=from+(to-from)*e;el.textContent=fmt(v);if(p<1)requestAnimationFrame(fr);else el._cur=to;}requestAnimationFrame(fr);}
-  const EV=document.getElementById('ev'),VAL=document.getElementById('val');
+  const LOST=document.getElementById('lost'),EV=document.getElementById('ev'),VAL=document.getElementById('val');
   function calc(){
+    document.getElementById('v-lost').textContent=LOST.value;
     document.getElementById('v-ev').textContent=EV.value;
     document.getElementById('v-val').textContent=(+VAL.value).toLocaleString('it-IT');
-    const ev=+EV.value,val=+VAL.value,gain=ev*val;
+    const lost=+LOST.value,ev=+EV.value,val=+VAL.value,gain=ev*val;
     tween(document.getElementById('gain'),gain,euro);
     tween(document.getElementById('evout'),ev,v=>Math.round(v).toLocaleString('it-IT'),450);
+    tween(document.getElementById('lostyr'),lost*12,v=>Math.round(v).toLocaleString('it-IT'),450);
     tween(document.getElementById('permese'),gain/12,euro,450);
   }
-  [EV,VAL].forEach(s=>s.addEventListener('input',calc)); calc();
+  [LOST,EV,VAL].forEach(s=>s.addEventListener('input',calc)); calc();
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   function countUp(scope){scope.querySelectorAll('.n[data-count]').forEach(el=>{const t=+el.dataset.count,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';tween(el,t,v=>pre+Math.round(v)+suf,900);});}
