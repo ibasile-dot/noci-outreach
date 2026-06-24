@@ -9,7 +9,7 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;}
-  .wrap{max-width:960px;margin:0 auto;padding:0 22px;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px;}
   a{color:var(--indigo2);}
   header.top{background:linear-gradient(135deg,#1E293B 0%,#312E81 100%);color:#fff;padding:30px 0 24px;}
   header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
@@ -22,23 +22,22 @@
   nav.tabs .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;}
   .tabbtn{font-size:13px;font-weight:700;color:var(--slate);background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 14px;cursor:pointer;}
   .tabbtn.on{background:var(--slate);color:#fff;border-color:var(--slate);}
-  .panel{display:none;padding:30px 0 70px;}
-  .panel.show{display:block;}
+  .panel{display:none;padding:30px 0 70px;} .panel.show{display:block;}
   h2{font-size:24px;font-weight:800;color:var(--slate);letter-spacing:-.02em;margin-bottom:4px;}
   .sub{color:var(--muted);font-size:14px;margin-bottom:18px;}
   h3{font-size:15px;font-weight:800;color:var(--slate);margin:0 0 8px;}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 1px 2px rgba(15,23,42,.03);}
-  .card.tip{border-left:4px solid var(--indigo);background:#F5F3FF;}
-  .card.warm{border-left:4px solid var(--green);}
+  .card.tip{border-left:4px solid var(--indigo);background:#F5F3FF;} .card.warm{border-left:4px solid var(--green);}
   .pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;background:#EDE9FE;color:#5B21B6;}
   .pill.warm{background:#DCFCE7;color:#166534;}
-  ul,ol{margin:6px 0 6px 0;padding-left:20px;} li{margin-bottom:7px;}
+  ul,ol{margin:6px 0;padding-left:20px;} li{margin-bottom:7px;}
   .qlist{list-style:none;padding-left:0;} .qlist li{padding:9px 0;border-bottom:1px solid var(--line2);} .qlist li:last-child{border:none;}
   .lbl{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--indigo2);margin:16px 0 6px;}
   .hook{background:#0F172A;color:#fff;border-radius:10px;padding:12px 15px;margin:8px 0;font-size:14px;}
-  table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
-  th{background:#F1F5F9;text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.03em;color:#334155;padding:9px 10px;border-bottom:1px solid #E2E8F0;}
-  td{padding:10px;border-bottom:1px solid var(--line2);vertical-align:top;} tr:last-child td{border:none;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  th{background:#F1F5F9;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.03em;color:#334155;padding:9px 9px;border-bottom:1px solid #E2E8F0;}
+  td{padding:9px;border-bottom:1px solid var(--line2);vertical-align:top;} tr:last-child td{border:none;}
+  .gain{color:var(--green);font-weight:700;white-space:nowrap;} .price{font-weight:700;color:var(--slate);white-space:nowrap;}
   .step{display:flex;gap:12px;margin-bottom:10px;} .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px;}
   .btn{display:inline-block;background:var(--slate);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 15px;border-radius:9px;margin-top:6px;}
   .meta{font-size:12.5px;color:var(--muted);}
@@ -51,8 +50,8 @@
 </div></header>
 
 <nav class="tabs"><div class="wrap">
-  <button class="tabbtn on" onclick="showTab('t-app',this)">Approccio</button>
-  <button class="tabbtn" onclick="showTab('t-az',this)" data-en="Companies">Aziende</button>
+  <button class="tabbtn on t" onclick="showTab('t-app',this)" data-en="Approach">Approccio</button>
+  <button class="tabbtn t" onclick="showTab('t-az',this)" data-en="Companies">Aziende</button>
   <button class="tabbtn" onclick="showTab('t-eql',this)">EuroQuality Lab</button>
   <button class="tabbtn" onclick="showTab('t-bon',this)">Masseria Bonelli</button>
 </div></nav>
@@ -70,7 +69,7 @@
   </div>
 
   <div class="card">
-    <h3 class="t" data-en="The 4 outcomes — identify which one in discovery">I 4 risultati — capisci quale in discovery</h3>
+    <h3 class="t" data-en="Typical outcomes — depends on the company (examples, not only these)">Risultati tipici — dipende dall'azienda (esempi, non solo questi)</h3>
     <ul style="margin-bottom:0;">
       <li class="t" data-en="Recover revenue">Recuperare fatturato</li>
       <li class="t" data-en="Recover time">Recuperare tempo</li>
@@ -93,32 +92,98 @@
 <!-- AZIENDE -->
 <section id="t-az" class="panel">
   <h2 class="t" data-en="Companies">Aziende</h2>
-  <p class="sub t" data-en="Targets with contacts and the likely big problem. Open a company's tab for the full meeting flow.">Target con contatti e probabile problema grande. Apri la scheda di un'azienda per il flusso completo dell'incontro.</p>
+  <p class="sub t" data-en="Targets with the big problem, estimated value, your price (15%), the build you reuse, and contact. Open a company's tab for the full meeting flow.">Target con problema grande, valore stimato, tuo prezzo (15%), l'asset che riusi e il contatto. Apri la scheda di un'azienda per il flusso completo.</p>
   <div style="overflow-x:auto;">
   <table>
     <thead><tr>
-      <th class="t" data-en="Company">Azienda</th><th class="t" data-en="Sector">Settore</th><th class="t" data-en="Contact / access">Contatto / accesso</th><th class="t" data-en="Likely big problem">Probabile problema grande</th><th class="t" data-en="Status">Stato</th>
+      <th class="t" data-en="Company">Azienda</th>
+      <th class="t" data-en="Big problem / outcome">Problema / risultato</th>
+      <th class="t" data-en="€ gain/yr">€ guadagno/anno</th>
+      <th class="t" data-en="Your price (15%)">Tuo prezzo (15%)</th>
+      <th class="t" data-en="Build to reuse">Asset da riusare</th>
+      <th class="t" data-en="Contact / access">Contatto</th>
     </tr></thead>
     <tbody>
-      <tr><td><b>EuroQuality Lab</b></td><td class="t" data-en="Analysis laboratory">Laboratorio analisi</td><td>Marco · <span class="meta t" data-en="via brother Antonello">tramite il fratello Antonello</span></td><td class="t" data-en="More reports/samples with the same team (recover time + revenue)">Più referti/campioni con lo stesso team (tempo + fatturato)</td><td><span class="pill warm t" data-en="In progress">In corso</span></td></tr>
-      <tr><td><b>Masseria Bonelli</b></td><td class="t" data-en="Weddings & events venue">Location matrimoni ed eventi</td><td>+39 346 830 1756 · masseriabonelliwedding@gmail.com</td><td class="t" data-en="Lost enquiries → lost events; international as it grows (more leads + revenue)">Richieste perse → eventi persi; internazionale crescendo (più contatti + fatturato)</td><td><span class="pill warm t" data-en="Call today">Call oggi</span></td></tr>
-      <tr><td><b>Klimaitalia</b></td><td class="t" data-en="Commercial refrigeration">Refrigerazione</td><td class="t" data-en="warm — friend Mariana">warm — amica Mariana</td><td class="t" data-en="Grow/translate without hiring (recover time)">Crescere/tradurre senza assumere (tempo)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td><b>Sereco</b></td><td class="t" data-en="Water treatment, exports 70+ countries">Depurazione acque, export 70+ paesi</td><td>Z.I. Noci</td><td class="t" data-en="Multilingual quotes/docs for export (revenue)">Preventivi/documenti multilingua per export (fatturato)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td><b>ICAM</b></td><td class="t" data-en="Automatic storage systems, Putignano">Magazzini automatici, Putignano</td><td>080 4911377 · info@icamonline.eu</td><td class="t" data-en="Faster quotes win more (revenue)">Preventivi più veloci = più commesse (fatturato)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td><b>Finish Village</b></td><td class="t" data-en="Lightweight construction materials">Edilizia leggera</td><td class="t" data-en="Putignano / Bari / Potenza">Putignano / Bari / Potenza</td><td class="t" data-en="Quote & order admin (recover time)">Preventivi e ordini (tempo)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td><b>Delizia S.p.A.</b></td><td class="t" data-en="Dairy, 200–500 staff">Latticini, 200–500 dip.</td><td>080 4977290 · info@deliziaspa.com</td><td class="t" data-en="Manual B2B order intake (recover time + revenue)">Ordini B2B inseriti a mano (tempo + fatturato)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td class="t" data-en="Dentists (group)"><b>Dentisti (gruppo)</b></td><td class="t" data-en="Dental practices">Studi dentistici</td><td class="t" data-en="warm — cousin Annalaura's friend; Studio Tinelli, Studio Gonnella">warm — amica della cugina Annalaura; Studio Tinelli, Studio Gonnella</td><td class="t" data-en="Missed calls = lost patients (more leads)">Chiamate perse = pazienti persi (più contatti)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
-      <tr><td class="t" data-en="Accountants"><b>Commercialisti</b></td><td class="t" data-en="Professional firms (Noci)">Studi professionali (Noci)</td><td>Studio Sgobba 080 4974074 · +altri</td><td class="t" data-en="Repetitive doc work → more clients per pro (recover time)">Lavoro documenti ripetitivo → più clienti per professionista (tempo)</td><td><span class="pill t" data-en="To contact">Da contattare</span></td></tr>
+      <tr>
+        <td><a href="https://www.euroqualitylab.it/" target="_blank"><b>EuroQuality Lab</b></a><br><span class="meta t" data-en="analysis lab">laboratorio analisi</span></td>
+        <td class="t" data-en="More reports/samples, same team (time + revenue)">Più referti/campioni, stesso team (tempo + fatturato)</td>
+        <td class="gain">€40–90k</td><td class="price">~€9k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1843691973" target="_blank">Release Notes Review</a></td>
+        <td>Marco <span class="meta t" data-en="(via brother Antonello)">(via fratello Antonello)</span></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.masseriabonelli.it/" target="_blank"><b>Masseria Bonelli</b></a><br><span class="meta t" data-en="weddings & events">matrimoni ed eventi</span></td>
+        <td class="t" data-en="Lost/slow enquiries → lost events (more leads)">Richieste perse/lente → eventi persi (più contatti)</td>
+        <td class="gain">€15–30k</td><td class="price t" data-en="~€3.6k or per-event">~€3.6k o a evento</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1877934087" target="_blank">Lead Enrichment Agent</a></td>
+        <td>+39 346 830 1756</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.klimaitalia.it/" target="_blank"><b>Klimaitalia</b></a><br><span class="meta t" data-en="refrigeration">refrigerazione</span></td>
+        <td class="t" data-en="Grow / translate without hiring (time)">Crescere / tradurre senza assumere (tempo)</td>
+        <td class="gain">€40–100k</td><td class="price">~€10k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1843691973" target="_blank">Release Notes Review</a></td>
+        <td class="t" data-en="warm — friend Mariana">warm — amica Mariana</td>
+      </tr>
+      <tr>
+        <td><a href="https://sereco.it/en/home-en/" target="_blank"><b>Sereco</b></a><br><span class="meta t" data-en="water treatment, exports 70+ countries">depurazione, export 70+ paesi</span></td>
+        <td class="t" data-en="Multilingual quotes/docs for export (revenue)">Preventivi/doc multilingua per export (fatturato)</td>
+        <td class="gain">€50k+</td><td class="price">~€9k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1843691973" target="_blank">Release Notes Review</a></td>
+        <td class="t" data-en="Industrial zone, Noci">Z.I. Noci</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.icamonline.eu/" target="_blank"><b>ICAM</b></a><br><span class="meta t" data-en="automatic storage, Putignano">magazzini automatici, Putignano</span></td>
+        <td class="t" data-en="Faster quotes win more deals (revenue)">Preventivi più veloci = più commesse (fatturato)</td>
+        <td class="gain">€50k+</td><td class="price">~€9k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/OPKL/pages/1794670701" target="_blank">Diagram/PDF Builder</a></td>
+        <td>080 4911377 · info@icamonline.eu</td>
+      </tr>
+      <tr>
+        <td><a href="https://finishvillage.it/" target="_blank"><b>Finish Village</b></a><br><span class="meta t" data-en="lightweight construction materials">edilizia leggera</span></td>
+        <td class="t" data-en="Quote & order admin (time)">Preventivi e ordini (tempo)</td>
+        <td class="gain">€40–80k</td><td class="price">~€8k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/OPKL/pages/1794670701" target="_blank">Diagram/PDF Builder</a></td>
+        <td>Putignano / Bari / Potenza</td>
+      </tr>
+      <tr>
+        <td><a href="https://www.beverfood.com/caseificio/delizia.html" target="_blank"><b>Delizia S.p.A.</b></a><br><span class="meta t" data-en="dairy, 200–500 staff">latticini, 200–500 dip.</span></td>
+        <td class="t" data-en="Manual B2B order intake (time + revenue)">Ordini B2B inseriti a mano (tempo + fatturato)</td>
+        <td class="gain">€60–120k</td><td class="price">~€13k + €5k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/OPKL/pages/575176850" target="_blank">Support Mailboxes</a></td>
+        <td>080 4977290 · info@deliziaspa.com</td>
+      </tr>
+      <tr>
+        <td><span class="pill" style="margin-bottom:4px;">NEW</span><br><a href="https://www.foleum.shop/en/" target="_blank"><b>Frantoio Forti</b></a>, <a href="https://www.cantinedimarco.com/" target="_blank">Cantine di Marco</a>, <a href="https://www.ipastini.it/" target="_blank">I Pàstini</a><br><span class="meta t" data-en="oil & wine exporters">esportatori olio/vino</span></td>
+        <td class="t" data-en="Sell into more countries without hiring (revenue)">Vendere in più paesi senza assumere (fatturato)</td>
+        <td class="gain">€40–90k</td><td class="price">~€9k + €3k setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1877934087" target="_blank">Lead Enrichment Agent</a></td>
+        <td class="t" data-en="ExportPuglia / Europages">ExportPuglia / Europages</td>
+      </tr>
+      <tr>
+        <td><b class="t" data-en="Dentists (group)">Dentisti (gruppo)</b><br><span class="meta">Studio Tinelli, <a href="https://www.facebook.com/p/Studio-Odontoiatrico-Gonnella-Ivone-61572983945826/" target="_blank">Studio Gonnella</a></span></td>
+        <td class="t" data-en="Missed calls = lost patients (more leads)">Chiamate perse = pazienti persi (più contatti)</td>
+        <td class="gain">€30–55k</td><td class="price t" data-en="€349/mo + €500">€349/mese + €500</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/OPKL/pages/575176850" target="_blank">Support Mailboxes</a></td>
+        <td class="t" data-en="warm — cousin Annalaura's friend">warm — amica della cugina Annalaura</td>
+      </tr>
+      <tr>
+        <td><b class="t" data-en="Accountants">Commercialisti</b><br><span class="meta">Studio Sgobba +<span class="t" data-en=" others"> altri</span></span></td>
+        <td class="t" data-en="Repetitive doc work → more clients per pro (time)">Documenti ripetitivi → più clienti per professionista (tempo)</td>
+        <td class="gain">€30–60k</td><td class="price t" data-en="€249/mo + setup">€249/mese + setup</td>
+        <td><a href="https://expoplatform.atlassian.net/wiki/spaces/ATM/pages/1843691973" target="_blank">doc pipeline</a></td>
+        <td>080 4974074</td>
+      </tr>
     </tbody>
   </table>
   </div>
+  <p class="meta" style="margin-top:10px;" class="t" data-en="Build links go to your ExpoPlatform Confluence (visible to you).">I link agli asset puntano alla tua Confluence ExpoPlatform (visibili a te).</p>
 </section>
 
 <!-- EUROQUALITY -->
 <section id="t-eql" class="panel">
   <h2>EuroQuality Lab</h2>
   <p class="sub t" data-en="Analysis lab, Gioia del Colle. Founded 1986 (Dr. Loperfido). Also funded R&D (ELEVATO, with CNR + Capurso). Contact: Marco, via your brother Antonello.">Laboratorio analisi, Gioia del Colle. Fondato nel 1986 (Dott. Loperfido). Anche R&S finanziata (ELEVATO, con CNR + Capurso). Contatto: Marco, tramite tuo fratello Antonello.</p>
-
   <div class="lbl t" data-en="The meeting, in 4 steps">L'incontro, in 4 momenti</div>
   <div class="card">
     <div class="step"><div class="n">1</div><div class="t" data-en="Build rapport. Start human — who introduced you, the area. No business yet.">Crea sintonia. Parti dall'umano — chi vi ha presentati, la zona. Niente business subito.</div></div>
@@ -127,22 +192,21 @@
     <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below). Listen, don't sell.">Customer development — trova il problema più grande (domande sotto). Ascolta, non vendere.</div></div>
     <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: only now show the tailored solution — the landing page.">"Wow": solo ora mostri la soluzione su misura — la pagina.</div></div>
   </div>
-
   <div class="lbl t" data-en="Questions — understand the business & goal">Domande — capire l'attività e l'obiettivo</div>
   <ul class="qlist">
-    <li class="t" data-en="How does the lab work today? What analyses do you do and for which clients (food, environmental, private)?">Come funziona oggi il laboratorio? Che analisi fate e per quali clienti (alimentare, ambientale, privati)?</li>
-    <li class="t" data-en="How many samples / test reports do you handle in a week or month?">Quanti campioni / rapporti di prova gestite in una settimana o un mese?</li>
-    <li class="t" data-en="Where do you want to get to in the next 1–2 years — more volume, new analyses, more research projects?">Dove volete arrivare nei prossimi 1–2 anni — più volumi, nuove analisi, più progetti di ricerca?</li>
+    <li class="t" data-en="How does the lab work today? What analyses, for which clients (food, environmental, private)?">Come funziona oggi il laboratorio? Che analisi fate e per quali clienti (alimentare, ambientale, privati)?</li>
+    <li class="t" data-en="How many samples / test reports in a week or month?">Quanti campioni / rapporti di prova gestite in una settimana o un mese?</li>
+    <li class="t" data-en="Where do you want to get to in 1–2 years — more volume, new analyses, more research projects?">Dove volete arrivare nei prossimi 1–2 anni — più volumi, nuove analisi, più progetti di ricerca?</li>
     <li class="t" data-en="Do you work with foreign clients or partner projects (like ELEVATO)? How much does it weigh?">Lavorate con clienti esteri o su progetti con partner (tipo ELEVATO)? Quanto pesa?</li>
   </ul>
   <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
   <ul class="qlist">
-    <li class="t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up only if not covered: and in day-to-day work, what eats the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up solo se non emerge: e nel lavoro di tutti i giorni, cosa vi ruba più tempo?)</li>
+    <li class="t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up only if not covered: and day-to-day, what eats the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up solo se non emerge: e nel lavoro di tutti i giorni, cosa vi ruba più tempo?)</li>
     <li class="t" data-en="If you could fix one single thing, what would it be?">Se poteste sistemare una sola cosa, quale sarebbe?</li>
   </ul>
-  <div class="lbl t" data-en="Questions — the workflow & capacity">Domande — il flusso e la capacità</div>
+  <div class="lbl t" data-en="Questions — workflow & capacity">Domande — il flusso e la capacità</div>
   <ul class="qlist">
-    <li class="t" data-en="From a sample arriving to the client getting the report: who touches it, and which steps are manual?">Da quando arriva un campione a quando il cliente ha il referto: chi ci mette le mani, e quali passaggi sono manuali?</li>
+    <li class="t" data-en="From a sample arriving to the client getting the report: who touches it, which steps are manual?">Da quando arriva un campione a quando il cliente ha il referto: chi ci mette le mani, quali passaggi sono manuali?</li>
     <li class="t" data-en="How long between the analysis being done and the report delivered?">Quanto tempo passa tra analisi finita e referto consegnato?</li>
     <li class="t" data-en="How much time goes into transcribing data and the paperwork (intake, privacy, satisfaction, complaints)?">Quanto tempo se ne va in trascrizione dati e modulistica (accettazione, privacy, soddisfazione, reclami)?</li>
     <li class="t" data-en="How many of you handle reporting and the office? What happens when many samples arrive at once?">In quanti gestite refertazione e ufficio? Cosa succede quando arrivano tanti campioni insieme?</li>
@@ -150,22 +214,17 @@
   <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
   <ul class="qlist">
     <li class="t" data-en="Have you already automated anything (management software, instruments)? How did it go?">Avete già automatizzato qualcosa (gestionale, strumenti)? Com'è andata?</li>
-    <li class="t" data-en="What does this problem cost you today — time, people, contracts?">Quanto vi costa oggi questo problema — tempo, persone, commesse?</li>
-    <li class="t" data-en="Who decides on this kind of investment?">Chi decide su questi investimenti?</li>
+    <li class="t" data-en="What does this problem cost you today — time, people, contracts? Who decides on this investment?">Quanto vi costa oggi questo problema — tempo, persone, commesse? Chi decide su questi investimenti?</li>
   </ul>
-
   <div class="lbl">Pitch</div>
-  <div class="card">
-    <p class="t" data-en="Quick ROI: each hour of reporting freed × samples/year → more capacity without hiring. The live calculator is on the page.">ROI rapido: ogni ora di refertazione liberata × campioni/anno → più capacità senza assumere. Il calcolatore dal vivo è nella pagina.</p>
-    <p class="meta t" data-en="Landing page: deploy + link coming next.">Pagina: deploy + link in arrivo.</p>
-  </div>
+  <div class="card"><p class="t" data-en="Quick ROI: each hour of reporting freed × samples/year → more capacity without hiring. Live calculator on the page.">ROI rapido: ogni ora di refertazione liberata × campioni/anno → più capacità senza assumere. Calcolatore dal vivo nella pagina.</p>
+  <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/euroquality.html" target="_blank" data-en="Open landing page →">Apri la pagina →</a></div>
 </section>
 
 <!-- MASSERIA BONELLI -->
 <section id="t-bon" class="panel">
   <h2>Masseria Bonelli</h2>
   <p class="sub t" data-en="Weddings & events venue, Noci (16th-c. masseria, exclusive use). Channels: Instagram, Facebook, website, email (no WhatsApp). Growing — possibly something bigger than the masseria.">Location matrimoni ed eventi, Noci (masseria del '500, uso esclusivo). Canali: Instagram, Facebook, sito, email (no WhatsApp). In crescita — forse qualcosa di più grande della masseria.</p>
-
   <div class="lbl t" data-en="The meeting, in 4 steps">L'incontro, in 4 momenti</div>
   <div class="card">
     <div class="step"><div class="n">1</div><div class="t" data-en="Build rapport. Who introduced you, the area, something genuine.">Crea sintonia. Chi vi ha presentati, la zona, qualcosa di genuino.</div></div>
@@ -174,22 +233,21 @@
     <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below).">Customer development — trova il problema più grande (domande sotto).</div></div>
     <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: show the tailored page.">"Wow": mostra la pagina su misura.</div></div>
   </div>
-
   <div class="lbl t" data-en="Questions — business & goal">Domande — attività e obiettivo</div>
   <ul class="qlist">
     <li class="t" data-en="How is the masseria structured today? What kinds of events, and in what proportion (weddings, communions, corporate)?">Com'è strutturata oggi la masseria? Che tipi di eventi, e in che proporzione (matrimoni, comunioni, aziendali)?</li>
-    <li class="t" data-en="In a season, how many events more or less? Are you almost always full, or are there dates/periods that stay free?">In una stagione, quanti eventi più o meno? Siete quasi sempre al completo o ci sono date/periodi liberi?</li>
-    <li class="t" data-en="Where do you want to get to in 1–2 years? Are you planning to expand or build something new beyond the masseria?">Dove volete arrivare nei prossimi 1–2 anni? Avete in mente di espandervi o creare qualcosa di nuovo oltre alla masseria?</li>
-    <li class="t" data-en="Do you work only with Italian clients or also foreign ones? How much does abroad weigh — and how much would you like it to?">Lavorate solo con clienti italiani o anche dall'estero? Quanto pesa l'estero — e quanto vorreste che pesasse?</li>
+    <li class="t" data-en="In a season, how many events more or less? Almost always full, or are there dates/periods that stay free?">In una stagione, quanti eventi più o meno? Siete quasi sempre al completo o ci sono date/periodi liberi?</li>
+    <li class="t" data-en="Where do you want to get to in 1–2 years? Planning to expand or build something new beyond the masseria?">Dove volete arrivare nei prossimi 1–2 anni? Avete in mente di espandervi o creare qualcosa di nuovo oltre alla masseria?</li>
+    <li class="t" data-en="Italian clients only or also foreign? How much does abroad weigh — and how much would you like it to?">Solo clienti italiani o anche dall'estero? Quanto pesa l'estero — e quanto vorreste che pesasse?</li>
   </ul>
   <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
   <ul class="qlist">
     <li class="t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up: and day-to-day, what wastes the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up: e nel quotidiano, cosa vi fa perdere più tempo?)</li>
     <li class="t" data-en="If you could fix one single thing in how you run it, what would it be?">Se poteste sistemare una sola cosa nella gestione, quale sarebbe?</li>
   </ul>
-  <div class="lbl t" data-en="Questions — enquiries (concrete, past behaviour)">Domande — le richieste (fatti concreti)</div>
+  <div class="lbl t" data-en="Questions — enquiries (concrete)">Domande — le richieste (fatti concreti)</div>
   <ul class="qlist">
-    <li class="t" data-en="How do enquiries arrive today — website, Instagram, Facebook, email? Do you use WhatsApp, or would you want to? Roughly how many a month?">Come arrivano oggi le richieste — sito, Instagram, Facebook, email? Usate WhatsApp, o vorreste? Più o meno quante al mese?</li>
+    <li class="t" data-en="How do enquiries arrive — website, Instagram, Facebook, email? Do you use WhatsApp, or would you want to? Roughly how many a month?">Come arrivano le richieste — sito, Instagram, Facebook, email? Usate WhatsApp, o vorreste? Più o meno quante al mese?</li>
     <li class="t" data-en="Who replies, and how long before a reply, especially at weekends or in peak season?">Chi risponde, e quanto tempo passa prima di rispondere, soprattutto nei weekend o in alta stagione?</li>
     <li class="t" data-en="In the last busy week: how many enquiries did you follow and how many fell behind?">Nell'ultima settimana piena: quante richieste avete seguito e quante sono rimaste indietro?</li>
     <li class="t" data-en="Of all enquiries, roughly how many become a site visit, and how many a confirmed event? Where are they lost?">Di tutte le richieste, più o meno quante diventano un sopralluogo, e quante un evento confermato? Dove si perdono?</li>
@@ -202,23 +260,17 @@
   </ul>
   <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
   <ul class="qlist">
-    <li class="t" data-en="Have you tried to fix this? With what tools or people? How did it go?">Avete già provato a sistemarlo? Con quali strumenti o persone? Com'è andata?</li>
-    <li class="t" data-en="What does this cost you today — time, people, or lost clients? Who decides on this?">Quanto vi costa oggi — tempo, persone, clienti persi? Chi decide su queste cose?</li>
+    <li class="t" data-en="Have you tried to fix this? With what tools or people? How did it go? What does it cost you today, and who decides?">Avete già provato a sistemarlo? Con quali strumenti o persone? Com'è andata? Quanto vi costa oggi, e chi decide?</li>
   </ul>
-
   <div class="lbl">Pitch</div>
-  <div class="card">
-    <p class="t" data-en="Quick ROI: extra events recovered × average event value → extra revenue. Live calculator on the page.">ROI rapido: eventi recuperati × valore medio evento → fatturato in più. Calcolatore dal vivo nella pagina.</p>
-    <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="Open landing page →">Apri la pagina →</a>
-  </div>
+  <div class="card"><p class="t" data-en="Quick ROI: extra events recovered × average event value → extra revenue. Live calculator on the page.">ROI rapido: eventi recuperati × valore medio evento → fatturato in più. Calcolatore dal vivo nella pagina.</p>
+  <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="Open landing page →">Apri la pagina →</a></div>
 </section>
 
 </div>
 
 <script>
-  // tabs
   function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
-  // language toggle (default Italian)
   const bIt=document.getElementById('b-it'),bEn=document.getElementById('b-en');
   function setLang(l){
     document.querySelectorAll('.t').forEach(el=>{ if(el.dataset.it===undefined) el.dataset.it=el.textContent; el.textContent=(l==='en'?(el.dataset.en||el.dataset.it):el.dataset.it); });
