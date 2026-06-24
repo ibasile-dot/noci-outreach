@@ -41,6 +41,9 @@
   .step{display:flex;gap:12px;margin-bottom:10px;} .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px;}
   .btn{display:inline-block;background:var(--slate);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 15px;border-radius:9px;margin-top:6px;}
   .meta{font-size:12.5px;color:var(--muted);}
+  .qlist li.core{background:#F5F3FF;border-left:3px solid var(--indigo);border-radius:0 8px 8px 0;padding:9px 10px;font-weight:600;}
+  .qlist li.core::before{content:"★ ";color:var(--indigo);}
+  .corelegend{font-size:12.5px;color:var(--indigo2);font-weight:700;margin:6px 0 2px;}
 </style>
 </head>
 <body>
@@ -203,22 +206,23 @@
     <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below). Listen, don't sell.">Customer development — trova il problema più grande (domande sotto). Ascolta, non vendere.</div></div>
     <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: only now show the tailored solution — the landing page.">"Wow": solo ora mostri la soluzione su misura — la pagina.</div></div>
   </div>
+  <p class="corelegend t" data-en="★ = must-ask in a 30-min meeting; the rest only if there's time.">★ = da chiedere assolutamente (incontro da 30 min); il resto solo se c'è tempo.</p>
   <div class="lbl t" data-en="Questions — understand the business & goal">Domande — capire l'attività e l'obiettivo</div>
   <ul class="qlist">
-    <li class="t" data-en="How does the lab work today? What analyses, for which clients (food, environmental, private)?">Come funziona oggi il laboratorio? Che analisi fate e per quali clienti (alimentare, ambientale, privati)?</li>
-    <li class="t" data-en="How many samples / test reports in a week or month?">Quanti campioni / rapporti di prova gestite in una settimana o un mese?</li>
-    <li class="t" data-en="Where do you want to get to in 1–2 years — more volume, new analyses, more research projects?">Dove volete arrivare nei prossimi 1–2 anni — più volumi, nuove analisi, più progetti di ricerca?</li>
+    <li class="core t" data-en="How does the lab work today? What analyses, for which clients (food, environmental, private)?">Come funziona oggi il laboratorio? Che analisi fate e per quali clienti (alimentare, ambientale, privati)?</li>
+    <li class="core t" data-en="How many samples / test reports in a week or month?">Quanti campioni / rapporti di prova gestite in una settimana o un mese?</li>
+    <li class="core t" data-en="Where do you want to get to in 1–2 years — more volume, new analyses, more research projects?">Dove volete arrivare nei prossimi 1–2 anni — più volumi, nuove analisi, più progetti di ricerca?</li>
     <li class="t" data-en="Do you work with foreign clients or partner projects (like ELEVATO)? How much does it weigh?">Lavorate con clienti esteri o su progetti con partner (tipo ELEVATO)? Quanto pesa?</li>
   </ul>
   <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
   <ul class="qlist">
-    <li class="t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up only if not covered: and day-to-day, what eats the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up solo se non emerge: e nel lavoro di tutti i giorni, cosa vi ruba più tempo?)</li>
+    <li class="core t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up only if not covered: and day-to-day, what eats the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up solo se non emerge: e nel lavoro di tutti i giorni, cosa vi ruba più tempo?)</li>
     <li class="t" data-en="If you could fix one single thing, what would it be?">Se poteste sistemare una sola cosa, quale sarebbe?</li>
   </ul>
   <div class="lbl t" data-en="Questions — workflow & capacity">Domande — il flusso e la capacità</div>
   <ul class="qlist">
-    <li class="t" data-en="From a sample arriving to the client getting the report: who touches it, which steps are manual?">Da quando arriva un campione a quando il cliente ha il referto: chi ci mette le mani, quali passaggi sono manuali?</li>
-    <li class="t" data-en="How long between the analysis being done and the report delivered?">Quanto tempo passa tra analisi finita e referto consegnato?</li>
+    <li class="core t" data-en="From a sample arriving to the client getting the report: who touches it, which steps are manual?">Da quando arriva un campione a quando il cliente ha il referto: chi ci mette le mani, quali passaggi sono manuali?</li>
+    <li class="core t" data-en="How long between the analysis being done and the report delivered?">Quanto tempo passa tra analisi finita e referto consegnato?</li>
     <li class="t" data-en="How much time goes into transcribing data and the paperwork (intake, privacy, satisfaction, complaints)?">Quanto tempo se ne va in trascrizione dati e modulistica (accettazione, privacy, soddisfazione, reclami)?</li>
     <li class="t" data-en="How many of you handle reporting and the office? What happens when many samples arrive at once?">In quanti gestite refertazione e ufficio? Cosa succede quando arrivano tanti campioni insieme?</li>
   </ul>
@@ -234,11 +238,15 @@
   <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
   <ul class="qlist">
     <li class="t" data-en="Have you already automated anything (management software, instruments)? How did it go?">Avete già automatizzato qualcosa (gestionale, strumenti)? Com'è andata?</li>
-    <li class="t" data-en="What does this problem cost you today — time, people, contracts? Who decides on this investment?">Quanto vi costa oggi questo problema — tempo, persone, commesse? Chi decide su questi investimenti?</li>
+    <li class="core t" data-en="What does this problem cost you today — time, people, contracts? Who decides on this investment?">Quanto vi costa oggi questo problema — tempo, persone, commesse? Chi decide su questi investimenti?</li>
   </ul>
-  <div class="lbl">Pitch</div>
-  <div class="card"><p class="t" data-en="Quick ROI: each hour of reporting freed × samples/year → more capacity without hiring. Live calculator on the page.">ROI rapido: ogni ora di refertazione liberata × campioni/anno → più capacità senza assumere. Calcolatore dal vivo nella pagina.</p>
-  <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/euroquality.html" target="_blank" data-en="Open landing page →">Apri la pagina →</a></div>
+  <div class="lbl t" data-en="Pitch & how to close">Pitch e come chiudere</div>
+  <div class="card">
+    <p class="t" data-en="Quick ROI: each hour of reporting freed × samples/year → more capacity without hiring.">ROI rapido: ogni ora di refertazione liberata × campioni/anno → più capacità senza assumere.</p>
+    <p class="meta t" data-en="No laptop here — don't show the page. Close like this:">Niente laptop qui — non mostrare la pagina. Chiudi così:</p>
+    <div class="hook t" data-en="&quot;So if I understood right, what weighs on you most is [the problem they named]. I think I can help exactly with that. I'll put together something tailored with your numbers and send it over — and if it convinces you, we start with a free trial on one type of report, no commitment. I'll send it by tomorrow — when shall we talk again?&quot;">"Quindi, se ho capito bene, la cosa che vi pesa di più è [il problema che hanno detto]. Penso di potervi aiutare proprio su quello. Vi preparo una cosa su misura con i vostri numeri e ve la mando — e se vi convince, partiamo con una prova gratuita su un tipo di referto, senza impegno. Ve la mando entro domani: quando ci risentiamo?"</div>
+    <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/euroquality.html" target="_blank" data-en="The page to send afterwards →">La pagina da mandare dopo →</a>
+  </div>
 </section>
 
 <!-- MASSERIA BONELLI -->
@@ -253,29 +261,30 @@
     <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below).">Customer development — trova il problema più grande (domande sotto).</div></div>
     <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: show the tailored page.">"Wow": mostra la pagina su misura.</div></div>
   </div>
+  <p class="corelegend t" data-en="★ = must-ask in a 30-min meeting; the rest only if there's time.">★ = da chiedere assolutamente (incontro da 30 min); il resto solo se c'è tempo.</p>
   <div class="lbl t" data-en="Questions — business & goal">Domande — attività e obiettivo</div>
   <ul class="qlist">
-    <li class="t" data-en="How is the masseria structured today? What kinds of events, and in what proportion (weddings, communions, corporate)?">Com'è strutturata oggi la masseria? Che tipi di eventi, e in che proporzione (matrimoni, comunioni, aziendali)?</li>
-    <li class="t" data-en="In a season, how many events more or less? Almost always full, or are there dates/periods that stay free?">In una stagione, quanti eventi più o meno? Siete quasi sempre al completo o ci sono date/periodi liberi?</li>
-    <li class="t" data-en="Where do you want to get to in 1–2 years? Planning to expand or build something new beyond the masseria?">Dove volete arrivare nei prossimi 1–2 anni? Avete in mente di espandervi o creare qualcosa di nuovo oltre alla masseria?</li>
+    <li class="core t" data-en="How is the masseria structured today? What kinds of events, and in what proportion (weddings, communions, corporate)?">Com'è strutturata oggi la masseria? Che tipi di eventi, e in che proporzione (matrimoni, comunioni, aziendali)?</li>
+    <li class="core t" data-en="In a season, how many events more or less? Almost always full, or are there dates/periods that stay free?">In una stagione, quanti eventi più o meno? Siete quasi sempre al completo o ci sono date/periodi liberi?</li>
+    <li class="core t" data-en="Where do you want to get to in 1–2 years? Planning to expand or build something new beyond the masseria?">Dove volete arrivare nei prossimi 1–2 anni? Avete in mente di espandervi o creare qualcosa di nuovo oltre alla masseria?</li>
     <li class="t" data-en="Italian clients only or also foreign? How much does abroad weigh — and how much would you like it to?">Solo clienti italiani o anche dall'estero? Quanto pesa l'estero — e quanto vorreste che pesasse?</li>
   </ul>
   <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
   <ul class="qlist">
-    <li class="t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up: and day-to-day, what wastes the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up: e nel quotidiano, cosa vi fa perdere più tempo?)</li>
+    <li class="core t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up: and day-to-day, what wastes the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up: e nel quotidiano, cosa vi fa perdere più tempo?)</li>
     <li class="t" data-en="If you could fix one single thing in how you run it, what would it be?">Se poteste sistemare una sola cosa nella gestione, quale sarebbe?</li>
   </ul>
   <div class="lbl t" data-en="Questions — enquiries (concrete)">Domande — le richieste (fatti concreti)</div>
   <ul class="qlist">
-    <li class="t" data-en="How do enquiries arrive — website, Instagram, Facebook, email? Do you use WhatsApp, or would you want to? Roughly how many a month?">Come arrivano le richieste — sito, Instagram, Facebook, email? Usate WhatsApp, o vorreste? Più o meno quante al mese?</li>
-    <li class="t" data-en="Who replies, and how long before a reply, especially at weekends or in peak season?">Chi risponde, e quanto tempo passa prima di rispondere, soprattutto nei weekend o in alta stagione?</li>
+    <li class="core t" data-en="How do enquiries arrive — website, Instagram, Facebook, email? Do you use WhatsApp, or would you want to? Roughly how many a month?">Come arrivano le richieste — sito, Instagram, Facebook, email? Usate WhatsApp, o vorreste? Più o meno quante al mese?</li>
+    <li class="core t" data-en="Who replies, and how long before a reply, especially at weekends or in peak season?">Chi risponde, e quanto tempo passa prima di rispondere, soprattutto nei weekend o in alta stagione?</li>
     <li class="t" data-en="In the last busy week: how many enquiries did you follow and how many fell behind?">Nell'ultima settimana piena: quante richieste avete seguito e quante sono rimaste indietro?</li>
-    <li class="t" data-en="Of all enquiries, roughly how many become a site visit, and how many a confirmed event? Where are they lost?">Di tutte le richieste, più o meno quante diventano un sopralluogo, e quante un evento confermato? Dove si perdono?</li>
+    <li class="core t" data-en="Of all enquiries, roughly how many become a site visit, and how many a confirmed event? Where are they lost?">Di tutte le richieste, più o meno quante diventano un sopralluogo, e quante un evento confermato? Dove si perdono?</li>
     <li class="t" data-en="Have you ever lost a couple because you replied late? Tell me about the last time.">Vi è mai capitato di perdere una coppia perché avete risposto tardi? Raccontami l'ultima volta.</li>
   </ul>
   <div class="lbl t" data-en="Questions — value, dates & channels">Domande — valore, date e canali</div>
   <ul class="qlist">
-    <li class="t" data-en="What's the average spend per event? Which extras do you offer (overnight stay, on-site ceremony, décor, open bar) and how many couples take them?">Qual è la spesa media a evento? Quali extra proponete (pernotto sposi, cerimonia in loco, allestimenti, open bar) e quanti li prendono?</li>
+    <li class="core t" data-en="What's the average spend per event? Which extras do you offer (overnight stay, on-site ceremony, décor, open bar) and how many couples take them?">Qual è la spesa media a evento? Quali extra proponete (pernotto sposi, cerimonia in loco, allestimenti, open bar) e quanti li prendono?</li>
     <li class="t" data-en="Which dates stay empty? What's the difference between high and low season, weekend and weekday?">Quali date restano libere? Che differenza c'è tra alta e bassa stagione, weekend e infrasettimanale?</li>
     <li class="t" data-en="Where do most couples come from (Instagram, site, portals, word of mouth)? Do you pay commissions or ads to portals — how much?">Da dove arrivano di più le coppie (Instagram, sito, portali, passaparola)? Pagate commissioni o pubblicità ai portali — quanto?</li>
     <li class="t" data-en="Do you know how many enquiries arrive a month, how many close, and from which channels?">Sapete quante richieste arrivano al mese, quante chiudono e da quali canali?</li>
@@ -287,11 +296,15 @@
   </ul>
   <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
   <ul class="qlist">
-    <li class="t" data-en="Have you tried to fix this? With what tools or people? How did it go? What does it cost you today, and who decides?">Avete già provato a sistemarlo? Con quali strumenti o persone? Com'è andata? Quanto vi costa oggi, e chi decide?</li>
+    <li class="core t" data-en="Have you tried to fix this? With what tools or people? How did it go? What does it cost you today, and who decides?">Avete già provato a sistemarlo? Con quali strumenti o persone? Com'è andata? Quanto vi costa oggi, e chi decide?</li>
   </ul>
-  <div class="lbl">Pitch</div>
-  <div class="card"><p class="t" data-en="Quick ROI: extra events recovered × average event value → extra revenue. Live calculator on the page.">ROI rapido: eventi recuperati × valore medio evento → fatturato in più. Calcolatore dal vivo nella pagina.</p>
-  <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="Open landing page →">Apri la pagina →</a></div>
+  <div class="lbl t" data-en="Pitch & how to close">Pitch e come chiudere</div>
+  <div class="card">
+    <p class="t" data-en="Quick ROI: extra events recovered × average event value → extra revenue.">ROI rapido: eventi recuperati × valore medio evento → fatturato in più.</p>
+    <p class="meta t" data-en="It's a call — don't show the page. Close like this:">È una call — non mostrare la pagina. Chiudi così:</p>
+    <div class="hook t" data-en="&quot;So if I understood right, what weighs on you most is [the problem they named]. I think I can help exactly with that. I'll put together something tailored with your numbers and send it over — and if it convinces you, we start with a free trial on one channel, no commitment. I'll send it by tomorrow — when shall we talk again?&quot;">"Quindi, se ho capito bene, la cosa che vi pesa di più è [il problema che hanno detto]. Penso di potervi aiutare proprio su quello. Vi preparo una cosa su misura con i vostri numeri e ve la mando — e se vi convince, partiamo con una prova gratuita su un canale, senza impegno. Ve la mando entro domani: quando ci risentiamo?"</div>
+    <a class="btn t" href="https://ibasile-dot.github.io/noci-outreach/bonelli.html" target="_blank" data-en="The page to send afterwards →">La pagina da mandare dopo →</a>
+  </div>
 </section>
 
 </div>
