@@ -217,55 +217,70 @@
 <section id="t-eql" class="panel">
   <h2>EuroQuality Lab</h2>
   <p class="sub t" data-en="Analysis lab, Gioia del Colle. Founded 1986 (Dr. Loperfido). Also funded R&D (ELEVATO, with CNR + Capurso). Contact: Marco, via your brother Antonello.">Laboratorio analisi, Gioia del Colle. Fondato nel 1986 (Dott. Loperfido). Anche R&S finanziata (ELEVATO, con CNR + Capurso). Contatto: Marco, tramite tuo fratello Antonello.</p>
-  <div class="lbl t" data-en="The meeting, in 4 steps">L'incontro, in 4 momenti</div>
-  <div class="card">
-    <div class="step"><div class="n">1</div><div class="t" data-en="Build rapport. Start human — who introduced you, the area. No business yet.">Crea sintonia. Parti dall'umano — chi vi ha presentati, la zona. Niente business subito.</div></div>
-    <div class="step"><div class="n">2</div><div class="t" data-en="Introduce yourself in one line, then ask to run a few questions:">Presentati in una frase, poi chiedi di fare qualche domanda:</div></div>
-    <div class="hook t" data-en="&quot;I'm Ilaria, I'm based in London and I build AI solutions that save companies time and help them grow. Before explaining how, I'd love to ask you a few questions to understand how you work.&quot;">"Sono Ilaria, lavoro a Londra e costruisco soluzioni di intelligenza artificiale che fanno risparmiare tempo e crescere le aziende. Prima di spiegarti come, mi piacerebbe farti qualche domanda per capire come lavorate."</div>
-    <div class="step"><div class="n">3</div><div class="t" data-en="Customer development — find the biggest problem (questions below). Listen, don't sell.">Customer development — trova il problema più grande (domande sotto). Ascolta, non vendere.</div></div>
-    <div class="step"><div class="n">4</div><div class="t" data-en="&quot;Wow&quot;: only now show the tailored solution — the landing page.">"Wow": solo ora mostri la soluzione su misura — la pagina.</div></div>
+  <div class="subtabs">
+    <button class="subbtn on t" onclick="showSub('e-cd',this)" data-en="Customer development">Customer development</button>
+    <button class="subbtn t" onclick="showSub('e-plan',this)" data-en="The plan">Il piano</button>
   </div>
-  <p class="corelegend t" data-en="★ = must-ask in a 30-min meeting; the rest only if there's time.">★ = da chiedere assolutamente (incontro da 30 min); il resto solo se c'è tempo.</p>
-  <div class="lbl t" data-en="Questions — understand the business & goal">Domande — capire l'attività e l'obiettivo</div>
-  <ul class="qlist">
-    <li class="core t" data-en="How does the lab work today? What analyses, for which clients (food, environmental, private)?">Come funziona oggi il laboratorio? Che analisi fate e per quali clienti (alimentare, ambientale, privati)?</li>
-    <li class="core t" data-en="How many samples / test reports in a week or month?">Quanti campioni / rapporti di prova gestite in una settimana o un mese?</li>
-    <li class="core t" data-en="Where do you want to get to in 1–2 years — more volume, new analyses, more research projects?">Dove volete arrivare nei prossimi 1–2 anni — più volumi, nuove analisi, più progetti di ricerca?</li>
-    <li class="t" data-en="Do you work with foreign clients or partner projects (like ELEVATO)? How much does it weigh?">Lavorate con clienti esteri o su progetti con partner (tipo ELEVATO)? Quanto pesa?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — find the biggest problem">Domande — trova il problema più grande</div>
-  <ul class="qlist">
-    <li class="core t" data-en="Thinking about growth, what slows you down or wastes the most time? (follow-up only if not covered: and day-to-day, what eats the most time?)">Pensando alla crescita, cosa vi frena o vi fa perdere più tempo? (follow-up solo se non emerge: e nel lavoro di tutti i giorni, cosa vi ruba più tempo?)</li>
-    <li class="t" data-en="If you could fix one single thing, what would it be?">Se poteste sistemare una sola cosa, quale sarebbe?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — workflow & capacity">Domande — il flusso e la capacità</div>
-  <ul class="qlist">
-    <li class="core t" data-en="From a sample arriving to the client getting the report: who touches it, which steps are manual?">Da quando arriva un campione a quando il cliente ha il referto: chi ci mette le mani, quali passaggi sono manuali?</li>
-    <li class="core t" data-en="How long between the analysis being done and the report delivered?">Quanto tempo passa tra analisi finita e referto consegnato?</li>
-    <li class="t" data-en="How much time goes into transcribing data and the paperwork (intake, privacy, satisfaction, complaints)?">Quanto tempo se ne va in trascrizione dati e modulistica (accettazione, privacy, soddisfazione, reclami)?</li>
-    <li class="t" data-en="How many of you handle reporting and the office? What happens when many samples arrive at once?">In quanti gestite refertazione e ufficio? Cosa succede quando arrivano tanti campioni insieme?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — clients, contracts & data">Domande — clienti, commesse e dati</div>
-  <ul class="qlist">
-    <li class="t" data-en="How do new clients arrive? Would you like more in a specific sector (food, environmental)?">Come arrivano i nuovi clienti? Vorreste più clienti in un settore specifico (alimentare, ambientale)?</li>
-    <li class="t" data-en="How do you produce quotes, and how long does it take? Of new-client requests, how many become contracts?">Come fate i preventivi e quanto ci mettete? Delle richieste di nuovi clienti, quante diventano commesse?</li>
-    <li class="t" data-en="How many clients are recurring (periodic monitoring) vs one-off? How do you keep them?">Quanti clienti sono ricorrenti (monitoraggi periodici) e quanti una tantum? Come li fidelizzate?</li>
-    <li class="t" data-en="How many errors or re-runs happen because of manual transcription?">Quanti errori o rifacimenti capitano per la trascrizione manuale?</li>
-    <li class="t" data-en="How much time goes into accreditation and funded projects (audits, traceability, reporting)?">Quanto tempo se ne va in accreditamento e progetti finanziati (audit, tracciabilità, rendicontazione)?</li>
-    <li class="t" data-en="Do you have seasonal peaks (harvest, production)? How do you cope? Do you track turnaround, volumes, and which clients are worth most?">Avete picchi stagionali (vendemmia, raccolta, produzione)? Come li reggete? Tracciate i tempi medi, i volumi e quali clienti valgono di più?</li>
-  </ul>
-  <div class="lbl t" data-en="Questions — already tried & cost">Domande — già provato e costo</div>
-  <ul class="qlist">
-    <li class="t" data-en="Have you already automated anything (management software, instruments)? How did it go?">Avete già automatizzato qualcosa (gestionale, strumenti)? Com'è andata?</li>
-    <li class="core t" data-en="What does this problem cost you today — time, people, contracts? Who decides on this investment?">Quanto vi costa oggi questo problema — tempo, persone, commesse? Chi decide su questi investimenti?</li>
-  </ul>
-  <div class="lbl t" data-en="Pitch & how to close">Pitch e come chiudere</div>
-  <div class="card">
-    <p class="t" data-en="Quick ROI: each hour of reporting freed × samples/year → more capacity without hiring.">ROI rapido: ogni ora di refertazione liberata × campioni/anno → più capacità senza assumere.</p>
-    <p class="meta t" data-en="No laptop here — don't show the page. Close like this:">Niente laptop qui — non mostrare la pagina. Chiudi così:</p>
-    <div class="hook t" data-en="&quot;So, if I've understood right, the thing that weighs on you most is [the problem they named] — and you'd want to change that, right? I'll put together a document on how I think I could solve it and the value it would bring. You look at it whenever, and if you'd like, I do a small free audit: I come in for a few hours, look at how you spend your time, and show you where AI can really help. To send you the document — email or WhatsApp?&quot;">"Quindi, se ho capito bene, la cosa che vi pesa di più è [il problema che hanno detto] — e vorreste cambiarla, giusto? Vi preparo un documento con come penso di poterla risolvere e il valore che porterebbe. Lo guardate con calma e, se vi va, faccio un piccolo audit gratuito: qualche chiamata con voi e il team, mi mostrate come lavorate (schermate, piattaforme) e vi dico dove l'AI può aiutarvi davvero. Per mandarvi il documento, meglio email o WhatsApp?"</div>
-    <a class="btn t" href="https://ibasile-dot.github.io/euroquality-lab/" target="_blank" data-en="The client page →">La pagina per il cliente →</a>
+
+  <!-- ===== CUSTOMER DEVELOPMENT ===== -->
+  <div id="e-cd" class="subpanel show">
+    <div class="card warm">
+      <h3 class="t" data-en="In short">In sintesi</h3>
+      <p class="t" data-en="Analysis lab (food, pesticides/residues, environmental) in Gioia del Colle. Marco is proactive and into AI (his developer already built a CRM with Claude; Marco knows n8n). The bottleneck isn't speed — it's the manual work around requests: everything arrives by email, to sort and handle by hand, with the risk of missing or getting something wrong. Goal: serve more clients without hiring.">Laboratorio di analisi (alimentare, pesticidi/residui, ambientale) a Gioia del Colle. Marco è proattivo e curioso di AI (il suo sviluppatore ha già costruito un CRM con Claude; Marco conosce n8n). Il collo di bottiglia non è la velocità: è il lavoro manuale intorno alle richieste — tutto arriva via email, da smistare e gestire a mano, con il rischio di perdere o sbagliare. Obiettivo: servire più clienti senza assumere.</p>
+    </div>
+    <div class="lbl t" data-en="What we learned (first chat — partial)">Cosa abbiamo capito (primo confronto — parziale)</div>
+    <table>
+      <tr><th class="t" data-en="Question">Domanda</th><th class="t" data-en="Answer">Risposta</th></tr>
+      <tr><td class="q t" data-en="What do they analyse?">Che analisi fanno?</td><td class="t" data-en="Food, pesticides/residues, environmental">Alimentare, pesticidi/residui, ambientale</td></tr>
+      <tr><td class="q t" data-en="The contact?">Il contatto?</td><td class="t" data-en="Marco — proactive, tries things; not the builder himself (his developer is)">Marco — proattivo, prova cose; non è lui a costruire (lo fa il suo sviluppatore)</td></tr>
+      <tr><td class="q t" data-en="Do they already use AI?">Già usano AI?</td><td class="t" data-en="Yes — built a CRM with Claude; Marco knows n8n">Sì — hanno costruito un CRM con Claude; Marco conosce n8n</td></tr>
+      <tr><td class="q t" data-en="The felt problem?">Il problema sentito?</td><td class="t" data-en="Email: requests and samples arrive by email, hard to prioritise, things can be missed or go wrong">Le email: richieste e campioni arrivano via email, difficili da prioritizzare, si può perdere o sbagliare</td></tr>
+      <tr><td class="q t" data-en="Reports / certificates?">Rapporti di prova / certificati?</td><td class="t" data-en="Would like a check that results are coherent and plausible before sign-off">Vorrebbero un controllo che i risultati siano coerenti e plausibili prima della firma</td></tr>
+      <tr><td class="q t" data-en="The salesperson?">Il commerciale?</td><td class="t" data-en="1 person, a new role; sales almost all in person — NOT the problem now">1 persona, figura nuova; vendite quasi tutte di persona — NON è il problema ora</td></tr>
+      <tr><td class="q t" data-en="How did we leave it?">Come ci siamo lasciati?</td><td class="t" data-en="A wider call with screen-share, to see exactly what they use">Una call più ampia con screen-share, per vedere cosa usano davvero</td></tr>
+    </table>
+    <div class="lbl t" data-en="Problem read">Lettura del problema</div>
+    <div class="card">
+      <p class="t" data-en="MANUAL WORK around requests (email) and reports — not sales speed. The lever: automate the email intake and the checks on reports, so the team handles more clients without hiring."><b>MANUALITÀ</b> intorno alle richieste (email) e ai rapporti di prova — non la velocità di vendita. La leva: automatizzare l'intake delle email e i controlli sui rapporti, così il team gestisce più clienti senza assumere.</p>
+      <p class="meta t" data-en="To clarify in the audit: how many emails/requests a week and WHO handles them (technician or dedicated person)? Do they have a LIMS/management system or are reports manual (Excel/Word)? Where do errors happen most? Which sectors do they want to grow in?">Da chiarire nell'audit: quante email/richieste a settimana e CHI le gestisce (un tecnico o una persona dedicata)? Hanno un LIMS/gestionale o i rapporti sono manuali (Excel/Word)? Dove capitano più errori? In che settori vogliono crescere?</p>
+    </div>
   </div>
+
+  <!-- ===== THE PLAN ===== -->
+  <div id="e-plan" class="subpanel">
+    <div class="card">
+      <span class="pri p1 t" data-en="PRIORITY 1">PRIORITÀ 1</span>
+      <h3 class="t" data-en="Emails that handle themselves">Email che si gestiscono da sole</h3>
+      <p class="t" data-en="Every email and sample is read, given an urgency, the sample logged and a reply drafted — a human checks and sends. Nothing lost, even on peak days.">Ogni email e campione viene letto, riceve un'urgenza, il campione viene registrato e la risposta preparata — un umano controlla e invia. Niente si perde, anche nei picchi.</p>
+      <p class="meta t" data-en="Worth: ~8–12 h/week back to the team (the email model in the client calculator)."><b>Vale:</b> ~8–12 h a settimana che tornano al team (il modello email del calcolatore cliente).</p>
+    </div>
+    <div class="card">
+      <span class="pri p2 t" data-en="PRIORITY 2">PRIORITÀ 2</span>
+      <h3 class="t" data-en="Checked, coherent reports">Rapporti di prova controllati</h3>
+      <p class="t" data-en="AI re-reads the results, checks they're coherent and plausible (values that make sense together) and flags anomalies. The manager validates and signs (no AI sign-off — accreditation needs a human).">L'AI rilegge i risultati, verifica che siano coerenti e plausibili (valori che hanno senso tra loro) e segnala le anomalie. Il responsabile valida e firma (niente firma dell'AI — l'accreditamento richiede una persona).</p>
+    </div>
+    <div class="card">
+      <span class="pri p2 t" data-en="PRIORITY 3">PRIORITÀ 3</span>
+      <h3 class="t" data-en="Less paperwork">Meno modulistica</h3>
+      <p class="t" data-en="Intake, privacy and quotes prepare themselves; an assistant answers 'where's my analysis?' so technicians aren't interrupted.">Accettazione, privacy e preventivi si preparano da soli; un assistente risponde a 'a che punto è la mia analisi?' così i tecnici non vengono interrotti.</p>
+    </div>
+    <div class="card">
+      <span class="pri p3 t" data-en="LATER">PIÙ AVANTI</span>
+      <h3 class="t" data-en="More clients (only later)">Più clienti (solo più avanti)</h3>
+      <p class="meta t" data-en="Possibly generate targeted leads for the one salesperson to follow up in person. NOT now — sales are in-person and the sector is slow; Marco said it's not the problem today.">Eventualmente generare contatti in target da far seguire di persona dall'unico commerciale. NON ora — le vendite sono di persona e il settore è lento; Marco ha detto che oggi non è il problema.</p>
+    </div>
+    <div class="lbl t" data-en="How we work">Come lavoriamo</div>
+    <div class="card warm">
+      <p class="t" data-en="Audit on screen → first project (email), fixed price → grow one piece at a time → ongoing support. Ilaria implements (turnkey), on top of what they already have (the Claude CRM, their management system, instruments).">Audit a schermo → primo progetto (email), prezzo fisso → si cresce un pezzo alla volta → supporto continuo. Ilaria implementa (turnkey), sopra a ciò che hanno già (il CRM fatto con Claude, il gestionale, gli strumenti).</p>
+    </div>
+    <div class="lbl t" data-en="Next step">Prossimo passo</div>
+    <div class="card">
+      <p class="t" data-en="The screen-share call: Marco shows email, management system and instruments, and from there we pick where to start.">La call con screen-share: Marco mostra email, gestionale e strumenti, e da lì scegliamo da dove partire.</p>
+      <a class="btn t" href="https://ibasile-dot.github.io/euroquality-lab/" target="_blank" data-en="The client page →">La pagina per il cliente →</a>
+    </div>
+    <p class="meta" style="margin-top:14px;border-top:1px dashed var(--line);padding-top:10px;"><b>Nota interna (non nel doc cliente):</b> Modello B (progetto + canone). Modelli e numeri nella scheda Approccio. ROI = tempo recuperato sull'email → capacità di crescere senza assumere (~€40k/anno = costo di un'assunzione evitata). Il prezzo resta a voce.</p>
+  </div>
+
 </section>
 
 <!-- MASSERIA BONELLI -->
